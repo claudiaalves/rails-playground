@@ -1,0 +1,12 @@
+<h1>Empregado </h1>
+<ul>
+	<li> <strong> ID: </strong> <%= @employee.id %> </li>
+	<li> <strong> Nome: </strong> <%= @employee.name %> </li>
+	<li> <strong> Email: </strong> <%= @employee.email %> </li>
+	<li> <strong> Data de Nascimento: </strong> <%= @employee.birth_date %> </li>
+</ul>
+
+<p><%= button_to "Editar", edit_employee_path(@employee.id), method: :get %>
+ <%= button_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%></p>
+
+ <%=link_to "Home", employees_path%>

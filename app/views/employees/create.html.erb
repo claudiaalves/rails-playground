@@ -1,0 +1,15 @@
+
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <h2>Não é possível criar o empregado :</h2>
+    <ul>
+    <% @employee.errors.each do |attribute, msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<%else%>
+  <p>Criado com sucesso!</p>
+<% end %>
+
+<%=link_to "Home", employees_path%>
