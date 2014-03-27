@@ -1,0 +1,29 @@
+<h1>Empregados</h1>
+<% if @employees.count > 0 %>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Data de Nascimento</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @employees.each do|employee| %>
+      <tr>
+        <td><%= link_to employee.name, employee_path(employee.id) %></td>
+	      <td><%= employee.email %></td>
+	      <td><%= employee.birth_date %></td>
+        <td><%= button_to "Editar", edit_employee_path(employee.id), method: :get %></td>
+        <td><%= button_to "Eliminar", employee_path(employee.id), method: :delete , confirm: "Pretende eliminar?"%></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>Não existem empregados!</p>
+<% end %>
+
+<p>
+  <%= link_to "Novo", new_employee_path %>
+</p>
+
+
