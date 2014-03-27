@@ -3,14 +3,14 @@ require 'test_helper'
 class EmployeeTest < ActiveSupport::TestCase
   include ErrorString
 
-  #não guardar empregados sem o nome
+  #should not save employye without name
   test "not_save_employee_without_name" do
   	employee = Employee.new({
   		email: "claudia@test.com",
   		birth_date: "1991-03-03"
   	})
   	employee.save
-  	assert employee.errors[:name][0] == NOME_OBRIGATORIO
+  	assert employee.errors[:name][0] == NAME_REQUIRED
   end
 
   test "not_save_employees_with_same_name" do
@@ -26,35 +26,35 @@ class EmployeeTest < ActiveSupport::TestCase
   		birth_date: "1988-03-03"
   	})
   	employee2.save
-  	assert employee2.errors[:name][0] == NOME_EXISTENTE
+  	assert employee2.errors[:name][0] == NAME_HAS_ALREADY_BEEN_TAKEN 
   end
 
-  #não guardar empregados sem a data de aniversário
+  #should not save employees without birth date
   test "not_save_employee_without_birth_date" do
   	employee = Employee.new({
   		name: "Claudia",
   		email: "claudia@test.com"
   	})
   	employee.save
-  	assert employee.errors[:birth_date][0] == DATA_NASCIMENTO_OBRIGATORIO
+  	assert employee.errors[:birth_date][0] == BIRTH_DATE_REQUIRED
   end
  
-  #validar o requisito de o empregado ter mais de 18 anos
+  #should not save employee with less than 18 years
   test "not_valid_age_of_employee" do
   	employee = Employee.new({
   		name: "Claudia",
   		email: "claudia@test.com",
-  		birth_date: Date.today - 18.years + 1.days
+  		birth_date: 18.years.ago + 1.days
   	})
   	employee.save
- 	assert employee.errors[:birth_date][0] == IDADE_MINIMA_18
+ 	assert employee.errors[:birth_date][0] == MINIMUM_AGE_18
   end
 
   test "valid_age_of_employee_18_years" do
   	employee = Employee.new({
   		name: "Claudia",
   		email: "claudia@test.com",
-  		birth_date: Date.today - 18.years
+  		birth_date: 18.years.ago
   	})
   	employee.save
     assert employee.errors[:birth_date].count == 0
@@ -65,7 +65,7 @@ class EmployeeTest < ActiveSupport::TestCase
   	employee = Employee.new({
   		name: "Claudia",
   		email: "claudia@test.com",
-  		birth_date: Date.today - 18.years - 1.days
+  		birth_date: 18.years.ago - 1.days
   	})
   	employee.save
     assert employee.errors[:birth_date].count == 0
@@ -76,17 +76,17 @@ class EmployeeTest < ActiveSupport::TestCase
   	employee = Employee.new({
   		name: "Claudia",
   		email: "claudia@test",
-  		birth_date: Date.today - 18.years
+      birth_date: 18.years.ago
   	})
   	employee.save
-    assert employee.errors[:email][0] == EMAIL_INVALIDO
+    assert employee.errors[:email][0] == INVALID_EMAIL
   end
 
   test "valid_email" do
   	employee = Employee.new({
   		name: "Claudia",
   		email: "claudia@test.com",
-  		birth_date: Date.today - 18.years - 1.days
+  		birth_date: 18.years.ago - 1.days
   	})
   	employee.save
     assert employee.errors[:email].count == 0
@@ -95,7 +95,7 @@ class EmployeeTest < ActiveSupport::TestCase
   test "accept_blank_email" do
   	employee = Employee.new({
   		name: "Claudia",
-  		birth_date: Date.today - 18.years - 1.days
+  		birth_date: 18.years.ago - 1.days
   	})
   	employee.save
     assert employee.errors[:email].count == 0

@@ -9,10 +9,9 @@ class EmployeesController < ApplicationController
 
   def create
   	@employee = Employee.new(employee_params)
-  	@employee.save
-  	if !@employee.errors.any? 
-  	  redirect_to employee_path(@employee.id) 
-  	end
+    if @employee.save
+      redirect_to employee_path(@employee.id) 
+    end
   end
 
 
@@ -22,12 +21,10 @@ class EmployeesController < ApplicationController
 
   def update
   	@employee = Employee.find(params[:id])
-  	@employee.update(name: employee_params[:name])
-  	@employee.update(email: employee_params[:email])
-  	@employee.update(birth_date: employee_params[:birth_date])
-  	if !@employee.errors.any? 
-  	  redirect_to employee_path(@employee.id) 
-  	end
+    @employee.update_attributes(employee_params)
+    if @employee.valid?
+      redirect_to employee_path(@employee.id) 
+    end
   end
 
   def destroy
