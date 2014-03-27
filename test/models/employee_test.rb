@@ -3,7 +3,7 @@ require 'test_helper'
 class EmployeeTest < ActiveSupport::TestCase
   include ErrorString
 
-  #should not save employye without name
+  #should not save employee without name
   test "not_save_employee_without_name" do
   	employee = Employee.new({
   		email: "claudia@test.com",
