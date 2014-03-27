@@ -8,8 +8,9 @@
     <% end %>
     </ul>
   </div>
+  <%=link_to "Ver Empregados", employees_path%>
 <%else%>
   <p>Criado com sucesso!</p>
+  <%=link_to "Ver Empregado", employee_path(@employee.id) %>
 <% end %>
 
-<%=link_to "Home", employees_path%>

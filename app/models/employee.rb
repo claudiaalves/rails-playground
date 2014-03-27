@@ -4,8 +4,8 @@ class Employee < ActiveRecord::Base
   validates :email, format: { allow_blank: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i , message: INVALID_EMAIL}
   validate :greater_or_equal_than_18_years_old
   validates :birth_date, presence:{ message: BIRTH_DATE_REQUIRED}
-  validates :points, numericality: {greater_than_or_equal_to: 0, only_integer: true}
-  has_many :rocket_actions
+  validates :total_points, numericality: {greater_than_or_equal_to: 0, only_integer: true}
+  has_and_belongs_to_many  :rocket_actions
 
   private
   def greater_or_equal_than_18_years_old

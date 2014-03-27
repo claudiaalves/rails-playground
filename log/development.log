@@ -11672,3 +11672,167 @@ Migrating to AddTotalPointsToEmployee (20140327171950)
   [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327171950')
   [1m[36m (19.8ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-27 18:01:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 543ms (Views: 523.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/employee.css?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/employee.js?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/rails.js?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/rails.css?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-27 18:01:52 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-27 18:11:54 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/employee.css?body=1" for 127.0.0.1 at 2014-03-27 18:11:54 +0000
+
+
+Started GET "/assets/rails.css?body=1" for 127.0.0.1 at 2014-03-27 18:11:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/assets/employee.js?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/assets/rails.js?body=1" for 127.0.0.1 at 2014-03-27 18:11:55 +0000
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-03-27 18:11:56 +0000
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.2ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+  Rendered employees/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 86ms (Views: 23.9ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-27 18:11:58 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-03-27 18:11:59 +0000
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.2ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+  Rendered employees/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-03-27 18:12:01 +0000
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2757707943585380603_70319080467480 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:10)
+  Rendered employees/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-03-27 18:12:02 +0000
+Processing by EmployeesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `employees`[0m
+  [1m[35mEmployee Load (0.2ms)[0m  SELECT `employees`.* FROM `employees`
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+  Rendered employees/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/employees/12" for 127.0.0.1 at 2014-03-27 18:12:05 +0000
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 12 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2757707943585380603_70319080467480 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:10)
+  Rendered employees/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-03-27 18:12:06 +0000
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.2ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+  Rendered employees/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2014-03-27 18:12:07 +0000
+Processing by EmployeesController#new as HTML
+  Rendered employees/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-03-27 18:12:09 +0000
+Processing by EmployeesController#index as HTML
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
+  Rendered employees/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 2.8ms)
