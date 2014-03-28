@@ -12258,3 +12258,430 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:31
 
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:30:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  Rendered rocket_actions/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 124ms (Views: 86.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:30:47 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:47 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:47 +0000
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:30:50 +0000
+Processing by RocketActionsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions`[0m
+  [1m[35mRocketAction Load (0.3ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions`
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb___4275173260885884252_70266750907160 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb___4275173260885884252_70266750907160 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb___4275173260885884252_70266750907160 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+  Rendered rocket_actions/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:50 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:50 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:50 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:30:50 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:30:50 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:37:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`
+  Rendered rocket_actions/show.html.erb within layouts/application (118.0ms)
+Completed 500 Internal Server Error in 173ms
+
+ActionView::Template::Error (Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`):
+     6: </ul>
+     7: 
+     8: <h2>Empregados associados</h2>
+     9: <% if @rocket_action.employees.count > 0 %>
+    10:   <table>
+    11:     <tr>
+    12:       <th>Nome</th>
+  app/views/rocket_actions/show.html.erb:9:in `_app_views_rocket_actions_show_html_erb__3187230184943063532_70121616185840'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.5ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:37:19 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1[0m
+Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`
+  Rendered rocket_actions/show.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`):
+     6: </ul>
+     7: 
+     8: <h2>Empregados associados</h2>
+     9: <% if @rocket_action.employees.count > 0 %>
+    10:   <table>
+    11:     <tr>
+    12:       <th>Nome</th>
+  app/views/rocket_actions/show.html.erb:9:in `_app_views_rocket_actions_show_html_erb__3187230184943063532_70121613021660'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.6ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:38:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`
+  Rendered rocket_actions/show.html.erb within layouts/application (34.6ms)
+Completed 500 Internal Server Error in 9556ms
+
+ActionView::Template::Error (Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`):
+     6: </ul>
+     7: 
+     8: <h2>Empregados associados</h2>
+     9: <% if @rocket_action.employees.count > 0 %>
+    10:   <table>
+    11:     <tr>
+    12:       <th>Nome</th>
+  app/views/rocket_actions/show.html.erb:9:in `_app_views_rocket_actions_show_html_erb__1937340712078982688_70157973495300'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.1ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:39:13 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRocketAction Load (0.9ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1[0m
+Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeesAndRocketActions (20140328114339)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeesAndRocketActions (20140328114339)
+  [1m[35m (84.7ms)[0m  CREATE TABLE `employees_and_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employees_id` int(11), `rockets_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140328114339')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:46:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.6ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`
+  Rendered rocket_actions/show.html.erb within layouts/application (84.1ms)
+Completed 500 Internal Server Error in 7933ms
+
+ActionView::Template::Error (Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`):
+     6: </ul>
+     7: 
+     8: <h2>Empregados associados</h2>
+     9: <% if @rocket_action.employees.count > 0 %>
+    10:   <table>
+    11:     <tr>
+    12:       <th>Nome</th>
+  app/views/rocket_actions/show.html.erb:9:in `_app_views_rocket_actions_show_html_erb___1483383134656942402_70164436536500'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.6ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:46:22 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRocketAction Load (3.3ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1[0m
+Mysql2::Error: Table 'rails-playground-app_development.employees_rocket_actions' doesn't exist: SHOW FULL FIELDS FROM `employees_rocket_actions`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeesAndRocketActions (20140328114913)
+  [1m[35m (54.7ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employees_id` int(11), `rockets_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140328114913')
+  [1m[36m (22.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:50:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+  Rendered rocket_actions/show.html.erb within layouts/application (110.6ms)
+Completed 500 Internal Server Error in 6908ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3):
+     6: </ul>
+     7: 
+     8: <h2>Empregados associados</h2>
+     9: <% if @rocket_action.employees.count > 0 %>
+    10:   <table>
+    11:     <tr>
+    12:       <th>Nome</th>
+  app/views/rocket_actions/show.html.erb:9:in `_app_views_rocket_actions_show_html_erb__2872416041257739227_70167074538720'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.8ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:51:18 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+  Rendered rocket_actions/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 22195ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3):
+     6: </ul>
+     7: 
+     8: <h2>Empregados associados</h2>
+     9: <% if @rocket_action.employees.count > 0 %>
+    10:   <table>
+    11:     <tr>
+    12:       <th>Nome</th>
+  app/views/rocket_actions/show.html.erb:9:in `_app_views_rocket_actions_show_html_erb__2872416041257739227_70167074538720'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.0ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:52:31 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeesAndRocketActions (20140328115331)
+  [1m[35m (0.6ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employees_id` int(11), `rocket_actions_id` int(11)) ENGINE=InnoDB
+Mysql2::Error: Table 'employees_rocket_actions' already exists: CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employees_id` int(11), `rocket_actions_id` int(11)) ENGINE=InnoDB
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeesAndRocketActions (20140328115331)
+  [1m[35m (52.4ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employees_id` int(11), `rocket_actions_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140328115331')
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:54:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (1.3ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+Mysql2::Error: Unknown column 'employees_rocket_actions.rocket_action_id' in 'where clause': SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeesAndRocketActions (20140328115610)
+  [1m[35m (71.0ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140328115610')
+  [1m[36m (23.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:56:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.9ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___4494993260575413964_70111441360960 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:29)
+  Rendered rocket_actions/show.html.erb within layouts/application (106.3ms)
+Completed 200 OK in 9026ms (Views: 143.3ms | ActiveRecord: 32.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:57:07 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:58:00 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___4494993260575413964_70111445604680 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:30)
+  Rendered rocket_actions/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 4580ms (Views: 16.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:58:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:58:04 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:58:04 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:58:04 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:58:05 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.3ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___4494993260575413964_70111445604680 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:30)
+  Rendered rocket_actions/show.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 120ms (Views: 68.9ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:02 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 12:00:58 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___4494993260575413964_70111445717040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:31)
+  Rendered rocket_actions/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 12:00:58 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:58 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:58 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:58 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:00:58 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___4494993260575413964_70111446179140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:32)
+  Rendered rocket_actions/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
