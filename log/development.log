@@ -12685,3 +12685,89 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:02:09 +0000
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 12:09:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___2846897935081676760_70355905930960 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:32)
+  Rendered rocket_actions/show.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 229ms (Views: 174.6ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:12 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:12 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:12 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:12 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 12:09:12 +0000
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-03-28 12:09:14 +0000
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__1180934518283239034_70355902553700 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:29)
+  Rendered employees/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 12:09:17 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3[0m
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 3
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_rocket_actions_show_html_erb___2846897935081676760_70355906137900 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/show.html.erb:32)
+  Rendered rocket_actions/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-03-28 12:09:22 +0000
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__1180934518283239034_70355902553700 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:29)
+  Rendered employees/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-03-28 12:09:55 +0000
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.8ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__1180934518283239034_70355902995920 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:30)
+  Rendered employees/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:55 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:55 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 12:09:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 12:09:55 +0000
