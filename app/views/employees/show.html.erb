@@ -26,7 +26,9 @@
   <h3>Não existem rocket actions associados!</h3>
 <% end %>
 
-<p><%= button_to "Editar", edit_employee_path(@employee.id), method: :get %>
- <%= button_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%></p>
+<%= link_to "Editar", edit_employee_path(@employee.id) %>
+<%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
 
- <%=link_to "Ver Empregados", employees_path%>
+<p></p>
+<%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employeeID: @employee.id})%>
+

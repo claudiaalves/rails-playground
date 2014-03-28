@@ -1,7 +1,16 @@
 TestApp::Application.routes.draw do
+  #resources :rocket_actions
 
+  get "/rocket_actions", to: "rocket_actions#index", as: "rocket_actions"
+  get "/rocket_actions/new", to:"rocket_actions#new", as: "new_rocket_action"
+  get "/rocket_actions/:id/edit", to:"rocket_actions#edit", as: "edit_rocket_action"
+  get "rocket_actions/:id", to: "rocket_actions#show", as: "rocket_action"
+  post "/rocket_actions", to: "rocket_actions#create"
+  patch "/rocket_actions/:id", to:"rocket_actions#update"
+  put "/rocket_actions/:id", to:"rocket_actions#update"
+  delete "/rocket_actions/:id", to:"rocket_actions#destroy"
+  
   resources :employees
-  resources :rocket_actions
 
   root "application#index"
   # The priority is based upon order of creation: first created -> highest priority.
