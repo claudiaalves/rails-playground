@@ -11836,3 +11836,107 @@ DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rail
 DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__421434770232152575_70319076213500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:17)
   Rendered employees/index.html.erb within layouts/application (11.5ms)
 Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-28 10:26:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (27.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 446ms (Views: 396.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 10:26:10 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 10:26:10 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 10:26:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 10:26:10 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 10:26:11 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-28 10:27:00 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 10:27:00 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:00 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:00 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-28 10:27:26 +0000
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 10:27:26 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:26 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:26 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:26 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 10:27:26 +0000
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 10:27:27 +0000
+Processing by RocketActionsController#index as HTML
+  [1m[35m (10.0ms)[0m  SELECT COUNT(*) FROM `rocket_actions`
+  Rendered rocket_actions/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 56ms (Views: 11.2ms | ActiveRecord: 20.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-03-28 10:28:10', 'rocket1', 3, '2014-03-28 10:28:10')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-03-28 10:28:11', 'rocket2', 2, '2014-03-28 10:28:11')
+  [1m[36m (15.1ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 10:31:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RocketActionsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `rocket_actions`
+  [1m[36mRocketAction Load (0.2ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb__2227359469293225973_70095327591720 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb__2227359469293225973_70095327591720 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+  Rendered rocket_actions/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 137ms (Views: 112.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 +0000

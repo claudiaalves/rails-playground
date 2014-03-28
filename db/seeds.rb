@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+RocketAction.create(name: 'rocket1', points: 3)
+RocketAction.create(name: 'rocket2', points: 2)

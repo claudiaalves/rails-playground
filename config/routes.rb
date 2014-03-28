@@ -1,6 +1,7 @@
 TestApp::Application.routes.draw do
-  resources :employees
 
+  resources :employees
+  resources :rocket_actions
 
   root "application#index"
   # The priority is based upon order of creation: first created -> highest priority.
