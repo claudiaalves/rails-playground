@@ -1,0 +1,27 @@
+<h1>Rocket Actions</h1>
+<% if @rocket_actions.count > 0 %>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Pontos</th>
+    </tr>
+    <% @rocket_actions.each do|rocket_action| %>
+      <tr>
+        <td><%= link_to rocket_action.name, rocket_action_path(rocket_action.id) %></td>
+	      <td><%= rocket_action.points %></td>
+        <td><%= button_to "Editar", edit_rocket_action_path(rocket_action.id), method: :get %></td>
+        <td><%= button_to "Eliminar", rocket_action_path(rocket_action.id), method: :delete , confirm: "Tem a certeza?"%></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>Não existem rocket actions!</p>
+<% end %>
+
+<p>
+  <%= link_to "Novo", new_rocket_action_path %>
+</p>
+
+<p>
+  <%= link_to "Home", root_path %>
+</p>

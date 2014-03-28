@@ -1,0 +1,14 @@
+<% if @rocket_action.errors.any? %>
+  <div id="error_explanation">
+    <h2>Não é possível criar o rocket action :</h2>
+    <ul>
+    <% @rocket_action.errors.each do |attribute, msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <%=link_to "Ver Rocket Actions", rocket_actions_path%>
+<%else%>
+  <p>Criado com sucesso!</p>
+  <%=link_to "Ver Rocket Action Criado", rocket_action_path(@rocket_action.id) %>
+<% end %>

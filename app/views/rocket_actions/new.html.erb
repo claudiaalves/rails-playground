@@ -1,0 +1,17 @@
+<h1>Novo Rocket Action</h1>
+<%= form_for :rocket_action, url: rocket_actions_path, method: :post do |f| %>
+  <p>
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :points, "Pontos" %><br>
+    <%= f.text_field :points, value: 0 %>
+  </p>
+
+  <p>
+    <%= f.submit 'Guardar'%>
+  </p>
+<% end %>
+
+<%=link_to "Ver Rocket Actions", rocket_actions_path%>
