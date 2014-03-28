@@ -1,11 +1,11 @@
 <h1>Novo Rocket Action</h1>
 <%= form_for :rocket_action, url: rocket_actions_path, method: :post do |f| %>
   <p>
-    <%= f.label :name, "Nome" %><br>
+    <%= f.label :name, "NOME" %><br>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :points, "Pontos" %><br>
+    <%= f.label :points, "PONTOS" %><br>
     <%= f.text_field :points, value: 0 %>
   </p>
 

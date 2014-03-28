@@ -1,2 +1,15 @@
-<h1>RocketActions#update</h1>
-<p>Find me in app/views/rocket_actions/update.html.erb</p>
+<% if @rocket_action.errors.any? %>
+  <div id="error_explanation">
+    <h2>Não é possível alterar os seguintes dados:</h2>
+    <ul>
+    <% @rocket_action.errors.each do |attribute, msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<%else%>
+  <h2>Actualização efectuada com sucesso</h2>
+<% end %>
+
+
+ <%=link_to "Voltar", rocket_action_path(@rocket_action.id)%>

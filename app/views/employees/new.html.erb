@@ -1,16 +1,16 @@
 <h1>Novo Empregado</h1>
 <%= form_for :employee, url: employees_path, method: :post do |f| %>
   <p>
-    <%= f.label :name, "Nome" %><br>
+    <%= f.label :name, "NOME" %><br>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email, "Email" %><br>
+    <%= f.label :email, "email" %><br>
     <%= f.text_field :email %>
   </p>
   
   <p>
-    <%= f.label :birth_date, "Data de Nascimento" %><br>
+    <%= f.label :birth_date, "DATA DE NASCIMENTO" %><br>
     <%= f.date_field :birth_date %>
   </p>
 
