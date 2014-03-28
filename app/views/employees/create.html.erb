@@ -1,4 +1,3 @@
-
 <% if @employee.errors.any? %>
   <div id="error_explanation">
     <h2>Não é possível criar o empregado :</h2>
@@ -13,4 +12,3 @@
   <p>Criado com sucesso!</p>
   <%=link_to "Ver Empregado", employee_path(@employee.id) %>
 <% end %>
-

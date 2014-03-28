@@ -11940,3 +11940,321 @@ Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 
 
 
 Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 10:31:47 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-28 11:16:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 169ms (Views: 147.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:16:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:16:55 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:16:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:16:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:16:55 +0000
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:16:57 +0000
+Processing by RocketActionsController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/models/rocket_action.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	validates :name presence: {message: NAME_REQUIRED}
+	                        ^):
+  app/controllers/rocket_actions_controller.rb:3:in `index'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.5ms)
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:16:57 +0000
+Processing by RocketActionsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/models/rocket_action.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	validates :name presence: {message: NAME_REQUIRED}
+	                        ^):
+  app/controllers/rocket_actions_controller.rb:3:in `index'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:17:15 +0000
+Processing by RocketActionsController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NameError (uninitialized constant RocketAction::NAME_REQUIRED):
+  app/models/rocket_action.rb:2:in `<class:RocketAction>'
+  app/models/rocket_action.rb:1:in `<top (required)>'
+  app/controllers/rocket_actions_controller.rb:3:in `index'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.4ms)
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:17:54 +0000
+Processing by RocketActionsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `rocket_actions`
+  [1m[36mRocketAction Load (0.3ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb__4496469102322659864_70157742891700 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_rocket_actions_index_html_erb__4496469102322659864_70157742891700 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/rocket_actions/index.html.erb:13)
+  Rendered rocket_actions/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 58ms (Views: 27.9ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:17:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:17:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:17:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:17:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:17:54 +0000
+
+
+Started GET "/rocket_actions/new" for 127.0.0.1 at 2014-03-28 11:17:56 +0000
+Processing by RocketActionsController#new as HTML
+  Rendered rocket_actions/new.html.erb within layouts/application (69.9ms)
+Completed 500 Internal Server Error in 74ms
+
+ActionView::Template::Error (undefined local variable or method `rocket_Actions_path' for #<#<Class:0x007f9dbeafe458>:0x007f9dbe53c3a8>):
+    1: <h1>Novo Rocket Action</h1>
+    2: <%= form_for :rocket_action, url: rocket_Actions_path, method: :post do |f| %>
+    3:   <p>
+    4:     <%= f.label :name, "Nome" %><br>
+    5:     <%= f.text_field :name %>
+  app/views/rocket_actions/new.html.erb:2:in `_app_views_rocket_actions_new_html_erb___4045952077520693086_70157739907060'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.0ms)
+
+
+Started GET "/rocket_actions/new" for 127.0.0.1 at 2014-03-28 11:17:56 +0000
+Processing by RocketActionsController#new as HTML
+  Rendered rocket_actions/new.html.erb within layouts/application (29.2ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (undefined local variable or method `rocket_Actions_path' for #<#<Class:0x007f9dbeafe458>:0x007f9dbe879250>):
+    1: <h1>Novo Rocket Action</h1>
+    2: <%= form_for :rocket_action, url: rocket_Actions_path, method: :post do |f| %>
+    3:   <p>
+    4:     <%= f.label :name, "Nome" %><br>
+    5:     <%= f.text_field :name %>
+  app/views/rocket_actions/new.html.erb:2:in `_app_views_rocket_actions_new_html_erb___4045952077520693086_70157741619380'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.3ms)
+
+
+Started GET "/rocket_actions/new" for 127.0.0.1 at 2014-03-28 11:18:14 +0000
+Processing by RocketActionsController#new as HTML
+  Rendered rocket_actions/new.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:18:14 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:18:14 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:18:14 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:18:14 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:18:14 +0000
+
+
+Started GET "/rocket_actions/new" for 127.0.0.1 at 2014-03-28 11:20:06 +0000
+Processing by RocketActionsController#new as HTML
+  Rendered rocket_actions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:20:06 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:06 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:06 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:06 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:06 +0000
+
+
+Started POST "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:20:08 +0000
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jB0xG8TLhLGZfLHVLP/zCP/CA3NMpgMOMbJPs7Ebh0=", "rocket_action"=>{"name"=>"", "points"=>""}, "commit"=>"Guardar"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered rocket_actions/create.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 88ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:08 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:08 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:08 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:08 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:20:08 +0000
+
+
+Started POST "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:20:25 +0000
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jB0xG8TLhLGZfLHVLP/zCP/CA3NMpgMOMbJPs7Ebh0=", "rocket_action"=>{"name"=>"", "points"=>""}, "commit"=>"Guardar"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered rocket_actions/create.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:20:25 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:25 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:25 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:25 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:20:25 +0000
+
+
+Started GET "/rocket_actions/new" for 127.0.0.1 at 2014-03-28 11:24:58 +0000
+Processing by RocketActionsController#new as HTML
+  Rendered rocket_actions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:24:58 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:24:58 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:24:58 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:24:58 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:24:58 +0000
+
+
+Started POST "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:25:03 +0000
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jB0xG8TLhLGZfLHVLP/zCP/CA3NMpgMOMbJPs7Ebh0=", "rocket_action"=>{"name"=>"", "points"=>"0"}, "commit"=>"Guardar"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 66ms
+
+NoMethodError (undefined method `point' for #<RocketAction:0x007f9dbe4a6790>):
+  app/controllers/rocket_actions_controller.rb:12:in `create'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.9ms)
+
+
+Started POST "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:25:19 +0000
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jB0xG8TLhLGZfLHVLP/zCP/CA3NMpgMOMbJPs7Ebh0=", "rocket_action"=>{"name"=>"", "points"=>"0"}, "commit"=>"Guardar"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered rocket_actions/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 50ms (Views: 6.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:19 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:19 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:25:19 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:19 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:19 +0000
+
+
+Started POST "/rocket_actions" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jB0xG8TLhLGZfLHVLP/zCP/CA3NMpgMOMbJPs7Ebh0=", "rocket_action"=>{"name"=>"rocket3", "points"=>"0"}, "commit"=>"Guardar"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `updated_at`) VALUES ('2014-03-28 11:25:31', 'rocket3', '2014-03-28 11:25:31')[0m
+  [1m[35m (15.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/rocket_actions/3
+Completed 302 Found in 41ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/rocket_actions/3" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1[0m
+  Rendered rocket_actions/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-28 11:25:31 +0000
