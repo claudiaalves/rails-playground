@@ -5,6 +5,7 @@
       <th>NOME</th>
       <th>EMAIL</th>
       <th>DATA DE NASCIMENTO</th>
+      <th>PONTOS(TOTAL)</th>
       <th></th>
       <th></th>
     </tr>
@@ -13,6 +14,7 @@
         <td><%= link_to employee.name, employee_path(employee.id) %></td>
 	      <td><%= employee.email %></td>
 	      <td><%= employee.birth_date %></td>
+        <td><%= employee.total_points %></td>
         <td><%= button_to "Editar", edit_employee_path(employee.id), method: :get %></td>
         <td><%= button_to "Eliminar", employee_path(employee.id), method: :delete , confirm: "Pretende eliminar?"%></td>
       </tr>

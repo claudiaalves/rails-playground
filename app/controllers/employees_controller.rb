@@ -34,8 +34,24 @@ class EmployeesController < ApplicationController
   	end
   end
 
+  def association_form
+    @employee = Employee.find(params[:employee_id])
+  end
+
+  def associate_rocket_action_to_employee
+    rocket_action = RocketAction.find(associate_rocket_action_params[:rocket_action_id])
+    employee = Employee.find(params[:employee_id])
+    employee.rocket_actions << rocket_action unless employee.rocket_actions.include? rocket_action
+    redirect_to employee_path(params[:employee_id])
+  end
+
+
   private
     def employee_params
     	params.require(:employee).permit(:name, :email, :birth_date)
+    end
+
+    def associate_rocket_action_params
+      params.require(:associate_rocket_action).permit(:rocket_action_id)
     end
 end

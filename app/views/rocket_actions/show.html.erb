@@ -5,8 +5,10 @@
 	<li> <strong> PONTOS: </strong> <%= @rocket_action.points %> </li>
 </ul>
 
+<p><%= button_to "Editar", edit_rocket_action_path(@rocket_action.id), method: :get %>
+ <%= button_to "Eliminar", rocket_action_path(@rocket_action.id), method: :delete , confirm: "Pretende eliminar?"%></p>
 
-<% if @rocket_action.employees.count > 0 %>
+<% if @rocket_action.employees.size > 0 %>
   <h2>Empregados associados</h2>
   <table>
     <tr>
@@ -27,8 +29,5 @@
 <% else %>
   <h3>Não existem empregados associados!</h3>
 <% end %>
-
-<p><%= button_to "Editar", edit_rocket_action_path(@rocket_action.id), method: :get %>
- <%= button_to "Eliminar", rocket_action_path(@rocket_action.id), method: :delete , confirm: "Pretende eliminar?"%></p>
 
  <%=link_to "Ver Rocket Actions", rocket_actions_path%>

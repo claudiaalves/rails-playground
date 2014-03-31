@@ -4,8 +4,7 @@ class RocketActionsController < ApplicationController
   end
 
   def new
-    debugger
-    @employeeID = params[:employeeID]  
+    @employee_id = params[:employee_id]  
   end
   
   def show
@@ -13,18 +12,15 @@ class RocketActionsController < ApplicationController
   end
 
   def create
-    @rocket_action = RocketAction.new(rocket_action_params)
-    if @rocket_action.save
-      debugger
-      if (employeeID = params[:employeeID])!=nil
-        @rocket_action.employees << Employee.find(employeeID)
-        debugger
-        redirect_to rocket_action_path(@rocket_action.id) 
+    rocket_action = RocketAction.new(rocket_action_params)
+    if rocket_action.save
+      if (employee_id = params[:employee_id])!=nil
+        employee = Employee.find(employee_id)
+        rocket_action.employees << employee
+        redirect_to rocket_action_path(rocket_action.id) 
       end
-      debugger
     end
   end
-
 
   def edit
     @rocket_action = RocketAction.find(params[:id])

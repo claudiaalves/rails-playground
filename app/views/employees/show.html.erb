@@ -4,9 +4,13 @@
 	<li> <strong> NOME: </strong> <%= @employee.name %> </li>
 	<li> <strong> EMAIL: </strong> <%= @employee.email %> </li>
 	<li> <strong> DATA DE NASCIMENTO: </strong> <%= @employee.birth_date %> </li>
+  <li> <strong> PONTOS (TOTAL): </strong> <%= @employee.total_points %> </li>
 </ul>
-
-<% if @employee.rocket_actions.count > 0 %>
+<p>
+  <%= link_to "Editar", edit_employee_path(@employee.id) %>
+  <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+</p>
+<% if @employee.rocket_actions.size > 0 %>
   <h2>Rocket Actions associados</h2>
   <table>
     <tr>
@@ -25,10 +29,5 @@
 <% else %>
   <h3>Não existem rocket actions associados!</h3>
 <% end %>
-
-<%= link_to "Editar", edit_employee_path(@employee.id) %>
-<%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
-
-<p></p>
-<%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employeeID: @employee.id})%>
-
+<p><%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employee_id: @employee.id})%></p>
+<p><%= link_to "Associar um Rocket Action", associate_rocket_action_to_employee_path(@employee.id)%> </p>

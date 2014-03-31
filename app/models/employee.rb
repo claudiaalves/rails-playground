@@ -6,6 +6,7 @@ class Employee < ActiveRecord::Base
   validates :birth_date, presence:{ message: BIRTH_DATE_REQUIRED}
   validates :total_points, numericality: {greater_than_or_equal_to: 0, only_integer: true}
   has_and_belongs_to_many  :rocket_actions
+  validates :rocket_actions,uniqueness: {scope: [:employee_id, :rocket_action_id]}
 
   private
   def greater_or_equal_than_18_years_old
