@@ -1,5 +1,4 @@
 TestApp::Application.routes.draw do
-  #resources :rocket_actions
 
   get "/rocket_actions", to: "rocket_actions#index", as: "rocket_actions"
   get "/rocket_actions/new", to:"rocket_actions#new", as: "new_rocket_action"
@@ -8,14 +7,6 @@ TestApp::Application.routes.draw do
   get "/employees/:employee_id/assoc", to:"employees#association_form", as: "associate_rocket_action_to_employee"
   post "/employees/:employee_id/assoc", to:"employees#associate_rocket_action_to_employee"
 
-=begin
-  get "/rocket_actions/:id/edit", to:"rocket_actions#edit", as: "edit_rocket_action"
-  patch "/rocket_actions/:id", to:"rocket_actions#update"
-  put "/rocket_actions/:id", to:"rocket_actions#update"
-  delete "/rocket_actions/:id", to:"rocket_actions#destroy"
-=end
-
-  
   resources :employees
 
   root "application#index"

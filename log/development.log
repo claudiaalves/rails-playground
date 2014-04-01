@@ -29944,3 +29944,274 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 16:53:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3765941832964419504_70279137554220 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3765941832964419504_70279137554220 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3765941832964419504_70279137554220 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 149ms (Views: 116.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:53:27 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:53:27 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:53:27 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:53:27 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:53:27 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 16:53:29 +0100
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-04-01 16:53:31 +0100
+Processing by RocketActionsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `rocket_actions`
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions`[0m
+  Rendered rocket_actions/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 60ms (Views: 31.6ms | ActiveRecord: 3.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (118.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (147.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployees (20140325115141)
+  [1m[35m (90.6ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRocketActions (20140327162504)
+  [1m[35m (131.9ms)[0m  CREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327162504')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddTotalPointsToEmployee (20140327171950)
+  [1m[35m (136.6ms)[0m  ALTER TABLE `employees` ADD `total_points` int(11) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327171950')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEmployeeRocketActionAssociations (20140401142944)
+  [1m[35m (113.0ms)[0m  CREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140401142944')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', '2014-04-01 15:58:49')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 1, '2014-04-01 15:58:49')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 2, '2014-04-01 15:58:49')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 3, '2014-04-01 15:58:49')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 4, '2014-04-01 15:58:49')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 5, '2014-04-01 15:58:49')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 6, '2014-04-01 15:58:49')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 7, '2014-04-01 15:58:49')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 8, '2014-04-01 15:58:49')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:58:49', 'rocket#{x}', 9, '2014-04-01 15:58:49')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36m (54.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (191.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployees (20140325115141)
+  [1m[35m (101.1ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRocketActions (20140327162504)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327162504')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddTotalPointsToEmployee (20140327171950)
+  [1m[35m (114.4ms)[0m  ALTER TABLE `employees` ADD `total_points` int(11) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327171950')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEmployeeRocketActionAssociations (20140401142944)
+  [1m[35m (121.4ms)[0m  CREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140401142944')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket0', 1, '2014-04-01 16:00:31')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket1', 2, '2014-04-01 16:00:31')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket2', 3, '2014-04-01 16:00:31')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket3', 4, '2014-04-01 16:00:31')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket4', 5, '2014-04-01 16:00:31')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket5', 6, '2014-04-01 16:00:31')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket6', 7, '2014-04-01 16:00:31')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket7', 8, '2014-04-01 16:00:31')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket8', 9, '2014-04-01 16:00:31')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:00:31', 'rocket9', 10, '2014-04-01 16:00:31')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket1', 1, '2014-04-01 16:01:02')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket2', 2, '2014-04-01 16:01:02')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket3', 3, '2014-04-01 16:01:02')[0m
+  [1m[35m (36.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket4', 4, '2014-04-01 16:01:02')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket5', 5, '2014-04-01 16:01:02')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket6', 6, '2014-04-01 16:01:02')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket7', 7, '2014-04-01 16:01:02')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket8', 8, '2014-04-01 16:01:02')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket9', 9, '2014-04-01 16:01:02')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:02', 'rocket10', 10, '2014-04-01 16:01:02')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket1', 1, '2014-04-01 16:01:48')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket2', 2, '2014-04-01 16:01:48')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket3', 3, '2014-04-01 16:01:48')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket4', 4, '2014-04-01 16:01:48')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (18.8ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket5', 5, '2014-04-01 16:01:48')[0m
+  [1m[35m (12.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket6', 6, '2014-04-01 16:01:48')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket7', 7, '2014-04-01 16:01:48')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket8', 8, '2014-04-01 16:01:48')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket9', 9, '2014-04-01 16:01:48')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:01:48', 'rocket10', 10, '2014-04-01 16:01:48')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36m (72.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (180.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployees (20140325115141)
+  [1m[35m (101.7ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140325115141')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRocketActions (20140327162504)
+  [1m[35m (131.3ms)[0m  CREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327162504')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddTotalPointsToEmployee (20140327171950)
+  [1m[35m (104.0ms)[0m  ALTER TABLE `employees` ADD `total_points` int(11) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140327171950')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEmployeeRocketActionAssociations (20140401142944)
+  [1m[35m (101.2ms)[0m  CREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140401142944')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket1', 1, '2014-04-01 16:02:13')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket2', 2, '2014-04-01 16:02:13')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket3', 3, '2014-04-01 16:02:13')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket4', 4, '2014-04-01 16:02:13')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket5', 5, '2014-04-01 16:02:13')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket6', 6, '2014-04-01 16:02:13')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket7', 7, '2014-04-01 16:02:13')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket8', 8, '2014-04-01 16:02:13')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket9', 9, '2014-04-01 16:02:13')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 16:02:13', 'rocket10', 10, '2014-04-01 16:02:13')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
