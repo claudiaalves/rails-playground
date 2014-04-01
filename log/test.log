@@ -5951,3 +5951,1348 @@ EmployeeTest: test_valid_email
   [1m[35mSQL (0.2ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-26', '2014-03-27 13:01:34', 'claudia@test.com', 'Claudia', '2014-03-27 13:01:34')
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (47.2ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.6ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (82.8ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (125.7ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (88.1ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (97.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (95.6ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331162213')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employees`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 11:54:41', '2014-04-01 11:54:41', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 11:54:41', '2014-04-01 11:54:41', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `rocket_actions`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 11:54:41', '2014-04-01 11:54:41', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 11:54:41', '2014-04-01 11:54:41', 298486374)[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+EmployeeControllerTest: test_should_get_create
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+EmployeeControllerTest: test_should_get_delete
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+EmployeeControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+EmployeeControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeControllerTest: test_should_get_show
+--------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+EmployeeControllerTest: test_should_get_update
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.5ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------------------
+RocketActionsControllerTest: test_should_get_create
+---------------------------------------------------
+Processing by RocketActionsController#create as HTML
+Completed 400 Bad Request in 1ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------
+RocketActionsControllerTest: test_should_get_destroy
+----------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+RocketActionsControllerTest: test_should_get_edit
+-------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------
+RocketActionsControllerTest: test_should_get_index
+--------------------------------------------------
+Processing by RocketActionsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions`[0m
+  [1m[35mRocketAction Load (0.2ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions`
+Completed 200 OK in 1105ms (Views: 1103.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+-------------------------------------------------
+RocketActionsControllerTest: test_should_get_show
+-------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------------------
+RocketActionsControllerTest: test_should_get_update
+---------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (9.1ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.6ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (49.7ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (182.2ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (136.3ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (142.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (139.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331162213')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employees`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 11:55:35', '2014-04-01 11:55:35', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 11:55:35', '2014-04-01 11:55:35', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `rocket_actions`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 11:55:35', '2014-04-01 11:55:35', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 11:55:35', '2014-04-01 11:55:35', 298486374)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+EmployeeControllerTest: test_should_get_create
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+EmployeeControllerTest: test_should_get_delete
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+EmployeeControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+EmployeeControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeControllerTest: test_should_get_show
+--------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+EmployeeControllerTest: test_should_get_update
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------------
+RocketActionsControllerTest: test_should_get_create
+---------------------------------------------------
+Processing by RocketActionsController#create as HTML
+Completed 400 Bad Request in 1ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------
+RocketActionsControllerTest: test_should_get_index
+--------------------------------------------------
+Processing by RocketActionsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions`[0m
+  [1m[35mRocketAction Load (0.3ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions`
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+RocketActionsControllerTest: test_should_get_show
+-------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (9.5ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.6ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (55.3ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (152.6ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (86.6ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (87.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (105.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331162213')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employees`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 11:56:26', '2014-04-01 11:56:26', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 11:56:26', '2014-04-01 11:56:26', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `rocket_actions`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 11:56:26', '2014-04-01 11:56:26', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 11:56:26', '2014-04-01 11:56:26', 298486374)[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.5ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (66.3ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (2.4ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (1368.6ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (1121.4ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (105.6ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (119.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (106.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331162213')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employees`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 13:16:24', '2014-04-01 13:16:24', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 13:16:24', '2014-04-01 13:16:24', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `rocket_actions`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 13:16:24', '2014-04-01 13:16:24', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 13:16:24', '2014-04-01 13:16:24', 298486374)[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (53.6ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.5ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (62.9ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (170.7ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (300.9ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (119.7ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (105.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331162213')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employees`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 13:20:25', '2014-04-01 13:20:25', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 13:20:25', '2014-04-01 13:20:25', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `rocket_actions`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 13:20:25', '2014-04-01 13:20:25', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 13:20:25', '2014-04-01 13:20:25', 298486374)[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.7ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (104.5ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (43.4ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (81.0ms)[0m  [1mCREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35m (193.9ms)[0m  CREATE TABLE `employees_rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (87.7ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (86.2ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (106.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140331162213')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employees`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 13:44:02', '2014-04-01 13:44:02', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 13:44:02', '2014-04-01 13:44:02', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `rocket_actions`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 13:44:02', '2014-04-01 13:44:02', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 13:44:02', '2014-04-01 13:44:02', 298486374)[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 13:44:02', 'Claudia', '2014-04-01 13:44:02')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1991-03-03', '2014-04-01 13:44:02', 'claudia@test.com', 'Claudia', '2014-04-01 13:44:02')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (15.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 13:44:02', 'claudia@test.com', 'Claudia', '2014-04-01 13:44:02')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 13:44:02', 'claudia@test.com', 'Claudia', '2014-04-01 13:44:02')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 13:44:02', 'claudia@test.com', 'Claudia', '2014-04-01 13:44:02')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 13:44:02', 'claudia@test.com', 'Claudia', '2014-04-01 13:44:02')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 13:44:02', 'rocket test', 3, '2014-04-01 13:44:02')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.5ms)[0m  [1mROLLBACK[0m
+  [1m[36m (59.4ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.5ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (67.4ms)[0m  [1mCREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (161.6ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB
+  [1m[36m (88.1ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (86.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (105.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140401142944')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employee_rocket_action_associations`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 14:43:22', '2014-04-01 14:43:22', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 14:43:22', '2014-04-01 14:43:22', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `employees`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 14:43:22', '2014-04-01 14:43:22', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 14:43:22', '2014-04-01 14:43:22', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `rocket_actions`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 14:43:22', '2014-04-01 14:43:22', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 14:43:22', '2014-04-01 14:43:22', 298486374)
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (57.6ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.5ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (69.5ms)[0m  [1mCREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (162.1ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB
+  [1m[36m (98.9ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (97.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (117.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140401142944')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employee_rocket_action_associations`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:23:28', '2014-04-01 15:23:28', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:23:28', '2014-04-01 15:23:28', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `employees`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:23:28', '2014-04-01 15:23:28', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:23:28', '2014-04-01 15:23:28', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `rocket_actions`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:23:28', '2014-04-01 15:23:28', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:23:28', '2014-04-01 15:23:28', 298486374)
+  [1m[36m (4.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:23:28', 'Claudia', '2014-04-01 15:23:28')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1991-03-03', '2014-04-01 15:23:28', 'claudia@test.com', 'Claudia', '2014-04-01 15:23:28')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:23:28', 'claudia@test.com', 'Claudia', '2014-04-01 15:23:28')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.5ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:23:28', 'claudia@test.com', 'Claudia', '2014-04-01 15:23:28')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:23:28', 'claudia@test.com', 'Claudia', '2014-04-01 15:23:28')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:23:28', 'claudia@test.com', 'Claudia', '2014-04-01 15:23:28')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:23:28', 'rocket test', 3, '2014-04-01 15:23:28')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (58.1ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.5ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (57.6ms)[0m  [1mCREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (161.3ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB
+  [1m[36m (87.9ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (85.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (95.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140401142944')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employee_rocket_action_associations`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:26:12', '2014-04-01 15:26:12', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:26:12', '2014-04-01 15:26:12', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `employees`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:26:12', '2014-04-01 15:26:12', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:26:12', '2014-04-01 15:26:12', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `rocket_actions`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:26:12', '2014-04-01 15:26:12', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:26:12', '2014-04-01 15:26:12', 298486374)
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:26:12', 'Claudia', '2014-04-01 15:26:12')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1991-03-03', '2014-04-01 15:26:12', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:12')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:26:12', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:12')[0m
+  [1m[35m (1.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:26:12', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:12')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:26:12', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:12')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:26:12', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:12')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:26:12', 'rocket test', 3, '2014-04-01 15:26:12')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (9.9ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.5ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (68.7ms)[0m  [1mCREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (154.2ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB
+  [1m[36m (99.7ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (96.7ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (106.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140401142944')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employee_rocket_action_associations`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:26:47', '2014-04-01 15:26:47', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:26:47', '2014-04-01 15:26:47', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `employees`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:26:47', '2014-04-01 15:26:47', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:26:47', '2014-04-01 15:26:47', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `rocket_actions`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:26:47', '2014-04-01 15:26:47', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:26:47', '2014-04-01 15:26:47', 298486374)
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[35m (2.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:26:47', 'Claudia', '2014-04-01 15:26:47')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1991-03-03', '2014-04-01 15:26:47', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:47')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:26:47', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:47')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:26:47', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:47')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:26:47', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:47')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+RocketActionTest: test_update_total_points_when_associate_rocket_to_Employee
+----------------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:26:48', 'claudia@test.com', 'Claudia', '2014-04-01 15:26:48')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:26:48', 'rocket test', 3, '2014-04-01 15:26:48')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (37.9ms)[0m  [1mDROP DATABASE IF EXISTS `rails-playground-app_test`[0m
+  [1m[35m (0.5ms)[0m  CREATE DATABASE `rails-playground-app_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (66.2ms)[0m  [1mCREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (170.3ms)[0m  CREATE TABLE `employees` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `birth_date` date, `created_at` datetime, `updated_at` datetime, `total_points` int(11) DEFAULT 0) ENGINE=InnoDB
+  [1m[36m (100.8ms)[0m  [1mCREATE TABLE `rocket_actions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `points` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (86.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (114.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140401142944')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140325115141')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140327162504')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20140327171950')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `employee_rocket_action_associations`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:31:16', '2014-04-01 15:31:16', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `updated_at`, `id`) VALUES ('2014-04-01 15:31:16', '2014-04-01 15:31:16', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM `employees`[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:31:16', '2014-04-01 15:31:16', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `employees` (`name`, `email`, `birth_date`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 'MyString', '2014-03-25', '2014-04-01 15:31:16', '2014-04-01 15:31:16', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM `rocket_actions`
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:31:16', '2014-04-01 15:31:16', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO `rocket_actions` (`name`, `points`, `created_at`, `updated_at`, `id`) VALUES ('MyString', 1, '2014-04-01 15:31:16', '2014-04-01 15:31:16', 298486374)
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+EmployeeTest: test_accept_blank_email
+-------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:31:16', 'Claudia', '2014-04-01 15:31:16')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------------
+EmployeeTest: test_not_save_employee_without_birth_date
+-------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_not_save_employee_without_name
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------
+EmployeeTest: test_not_save_employees_with_same_name
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1991-03-03', '2014-04-01 15:31:16', 'claudia@test.com', 'Claudia', '2014-04-01 15:31:16')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+EmployeeTest: test_not_valid_age_of_employee
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+EmployeeTest: test_not_valid_email_format
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEmployee Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_18_years
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-04-01', '2014-04-01 15:31:16', 'claudia@test.com', 'Claudia', '2014-04-01 15:31:16')[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+EmployeeTest: test_valid_age_of_employee_greater_than_18_years
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:31:16', 'claudia@test.com', 'Claudia', '2014-04-01 15:31:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------
+EmployeeTest: test_valid_email
+------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEmployee Exists (0.3ms)[0m  SELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'Claudia' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1996-03-31', '2014-04-01 15:31:16', 'claudia@test.com', 'Claudia', '2014-04-01 15:31:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m

@@ -5,11 +5,10 @@ class Employee < ActiveRecord::Base
   validate :greater_or_equal_than_18_years_old
   validates :birth_date, presence:{ message: BIRTH_DATE_REQUIRED}
   validates :total_points, numericality: {greater_than_or_equal_to: 0, only_integer: true}
-  has_and_belongs_to_many  :rocket_actions
-  validates :rocket_actions,uniqueness: {scope: [:employee_id, :rocket_action_id]}
+  has_many :employee_rocket_action_associations
+  has_many  :rocket_actions, :through => :employee_rocket_action_associations
 
   def update_total_points
-    debugger
     self.update_attribute(:total_points, self.rocket_actions.sum('points'))  
   end
 

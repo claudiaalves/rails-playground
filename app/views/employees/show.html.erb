@@ -29,5 +29,6 @@
 <% else %>
   <h3>Não existem rocket actions associados!</h3>
 <% end %>
-<p><%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employee_id: @employee.id})%></p>
-<p><%= link_to "Associar um Rocket Action", associate_rocket_action_to_employee_path(@employee.id)%> </p>
+<p><%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employee_id: @employee.id})%>
+<%= link_to "Associar um Rocket Action", associate_rocket_action_to_employee_path(@employee.id)%> </p>
+<p><strong><%= link_to "Ver Empregados", employees_path%> </p></strong>

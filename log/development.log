@@ -27848,3 +27848,2099 @@ DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rail
   [1m[36mRocketAction Load (0.6ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8[0m
   Rendered employees/show.html.erb within layouts/application (8.9ms)
 Completed 200 OK in 35ms (Views: 15.4ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/employees/8/edit" for 127.0.0.1 at 2014-04-01 12:57:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  Rendered employees/edit.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 209ms (Views: 143.9ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 12:57:37 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 12:57:37 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 12:57:37 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 12:57:37 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 12:57:37 +0100
+
+
+Started PUT "/employees/8" for 127.0.0.1 at 2014-04-01 12:57:43 +0100
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QosYUcyglJk9O5yDbJoRfYaIJykeT6CuVrDlDu0NmnA=", "employee"=>{"name"=>"Marcos", "email"=>"marco@test.com", "birth_date"=>"1991-04-03"}, "commit"=>"Alterar", "id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marcos' AND `employees`.`id` != 8) LIMIT 1[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 61ms
+
+NoMethodError (undefined method `attributes' for #<ActiveRecord::Associations::CollectionProxy::ActiveRecord_Associations_CollectionProxy_RocketAction:0x007fd3f9e29378>):
+  app/controllers/employees_controller.rb:24:in `update'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started PUT "/employees/8" for 127.0.0.1 at 2014-04-01 13:02:44 +0100
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QosYUcyglJk9O5yDbJoRfYaIJykeT6CuVrDlDu0NmnA=", "employee"=>{"name"=>"Marcos", "email"=>"marco@test.com", "birth_date"=>"1991-04-03"}, "commit"=>"Alterar", "id"=>"8"}
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mEmployee Exists (0.4ms)[0m  SELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marco' AND `employees`.`id` != 8) LIMIT 1
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 8[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 14:18:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 96ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 14:18:08 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 14:18:08 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 14:18:08 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 14:18:08 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 14:18:08 +0100
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 14:18:10 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__694419334414176475_70341684577040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__694419334414176475_70341684577040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__694419334414176475_70341684577040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 69ms (Views: 38.8ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2014-04-01 14:18:12 +0100
+Processing by EmployeesController#new as HTML
+  Rendered employees/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2014-04-01 14:18:39 +0100
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QosYUcyglJk9O5yDbJoRfYaIJykeT6CuVrDlDu0NmnA=", "employee"=>{"name"=>"António", "email"=>"", "birth_date"=>"1980-02-22"}, "commit"=>"Guardar"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'António' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 47ms
+
+NoMethodError (undefined method `attributes' for #<ActiveRecord::Associations::CollectionProxy []>):
+  app/controllers/employees_controller.rb:12:in `create'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 14:36:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (27.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 227ms (Views: 195.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 14:36:24 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 14:36:24 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 14:36:24 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 14:36:24 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 14:36:24 +0100
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 14:36:26 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (8.9ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (80.8ms)
+Completed 200 OK in 139ms (Views: 53.1ms | ActiveRecord: 48.7ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2014-04-01 14:36:28 +0100
+Processing by EmployeesController#new as HTML
+  Rendered employees/new.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2014-04-01 14:36:50 +0100
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "employee"=>{"name"=>"António", "email"=>"", "birth_date"=>"1980-02-22"}, "commit"=>"Guardar"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.9ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'António' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 241ms
+
+NoMethodError (undefined method `attributes' for #<ActiveRecord::Associations::CollectionProxy []>):
+  app/controllers/employees_controller.rb:12:in `create'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.7ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 14:37:13 +0100
+Processing by EmployeesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `employees`[0m
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT `employees`.* FROM `employees`
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:37:14 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2291778178291005422_70177196094860 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 13
+  Rendered employees/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rocket_actions/new?employee_id=13" for 127.0.0.1 at 2014-04-01 14:37:16 +0100
+Processing by RocketActionsController#new as HTML
+  Parameters: {"employee_id"=>"13"}
+  Rendered rocket_actions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rocket_actions?employee_id=13" for 127.0.0.1 at 2014-04-01 14:37:37 +0100
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "rocket_action"=>{"name"=>"rocket test2", "points"=>"5"}, "commit"=>"Guardar", "employee_id"=>"13"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 13:37:37', 'rocket test2', 5, '2014-04-01 13:37:37')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO `employees_rocket_actions` (`rocket_action_id`, `employee_id`) VALUES (27, 13)
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  SELECT SUM(`rocket_actions`.`points`) AS sum_id FROM `rocket_actions` INNER JOIN `employees_rocket_actions` ON `rocket_actions`.`id` = `employees_rocket_actions`.`rocket_action_id` WHERE `employees_rocket_actions`.`employee_id` = 13
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE `employees` SET `total_points` = 5, `updated_at` = '2014-04-01 13:37:43' WHERE `employees`.`id` = 13
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/rocket_actions/27
+Completed 302 Found in 6712ms (ActiveRecord: 54.1ms)
+
+
+Started GET "/rocket_actions/27" for 127.0.0.1 at 2014-04-01 14:37:43 +0100
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 27 LIMIT 1
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT `employees`.* FROM `employees` INNER JOIN `employees_rocket_actions` ON `employees`.`id` = `employees_rocket_actions`.`employee_id` WHERE `employees_rocket_actions`.`rocket_action_id` = 27[0m
+  Rendered rocket_actions/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 14:37:43 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 14:37:43 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 14:37:43 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 14:37:43 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 14:37:43 +0100
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:38:12 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2291778178291005422_70177196094860 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined method `rocket_actions' for #<Employee:0x007fa6cde25fd8>):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___2291778178291005422_70177196094860'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.5ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:38:12 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2291778178291005422_70177207189040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `rocket_actions' for #<Employee:0x007fa6cf0260c0>):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___2291778178291005422_70177207189040'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.6ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:39:34 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+  Rendered employees/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 9ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:21: syntax error, unexpected '=', expecting keyword_end
+';     =begin 
+        ^
+/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:29: syntax error, unexpected '=', expecting keyword_end
+     =end 
+      ^
+/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:38: syntax error, unexpected end-of-input, expecting keyword_end):
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.4) lib/action_view/template.rb:248:in `block in compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `synchronize'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.4) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.4) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:403:in `_run__3521410930869903412__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1972972807225483850__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.7ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:40:38 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2291778178291005422_70177208720840 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `rocket_actions' for #<Employee:0x007fa6cf325fa0>):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___2291778178291005422_70177208720840'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.6ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:41:15 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+  Rendered employees/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 8ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:37: syntax error, unexpected end-of-input, expecting keyword_end):
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.4) lib/action_view/template.rb:248:in `block in compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `synchronize'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.4) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.4) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:403:in `_run__3521410930869903412__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1972972807225483850__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.0ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 14:42:02 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2291778178291005422_70177207150920 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 14:42:02 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:02 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:02 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:02 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:02 +0100
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 14:42:12 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__920765043895227153_70177196982460 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2014-04-01 14:42:15 +0100
+Processing by EmployeesController#new as HTML
+  Rendered employees/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees" for 127.0.0.1 at 2014-04-01 14:42:26 +0100
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "employee"=>{"name"=>"António", "email"=>"", "birth_date"=>"1980-02-22"}, "commit"=>"Guardar"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE `employees`.`name` = BINARY 'António' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `employees` (`birth_date`, `created_at`, `email`, `name`, `updated_at`) VALUES ('1980-02-22', '2014-04-01 13:42:26', '', 'António', '2014-04-01 13:42:26')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/employees/16
+Completed 302 Found in 18ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/employees/16" for 127.0.0.1 at 2014-04-01 14:42:26 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 16 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2291778178291005422_70177207150920 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:27 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:27 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 14:42:27 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:27 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 14:42:27 +0100
+
+
+Started GET "/employees/16" for 127.0.0.1 at 2014-04-01 15:01:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 16 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___853356937937579134_70338181487600 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` WHERE `rocket_actions`.`employee_id` = 16[0m
+Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT COUNT(*) FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16
+  Rendered employees/show.html.erb within layouts/application (55.6ms)
+Completed 500 Internal Server Error in 139ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT COUNT(*) FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___853356937937579134_70338181487600'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (48.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.9ms)
+
+
+Started GET "/employees/16" for 127.0.0.1 at 2014-04-01 15:02:19 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 16 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___853356937937579134_70338159034300 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36mRocketAction Load (0.9ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`employee_id` = 16[0m
+Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT `rocket_actions`.* FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `rocket_actions` WHERE `rocket_actions`.`employee_id` = 16
+Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT COUNT(*) FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16
+  Rendered employees/show.html.erb within layouts/application (20801.6ms)
+Completed 500 Internal Server Error in 20812ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT COUNT(*) FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16):
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% debugger %>
+    14: <% if @employee.rocket_actions.size > 0 %>
+    15:   <h2>Rocket Actions associados</h2>
+    16:   <table>
+    17:     <tr>
+  app/views/employees/show.html.erb:14:in `_app_views_employees_show_html_erb___853356937937579134_70338159034300'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.0ms)
+
+
+Started GET "/employees/16" for 127.0.0.1 at 2014-04-01 15:02:53 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 16 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___853356937937579134_70338159034300 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35mRocketAction Load (2.0ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`employee_id` = 16
+Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT `rocket_actions`.* FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` WHERE `rocket_actions`.`employee_id` = 16[0m
+Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT COUNT(*) FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16
+  Rendered employees/show.html.erb within layouts/application (5050.8ms)
+Completed 500 Internal Server Error in 5057ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'rocket_actions.employee_id' in 'where clause': SELECT COUNT(*) FROM `rocket_actions`  WHERE `rocket_actions`.`employee_id` = 16):
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% debugger %>
+    14: <% if @employee.rocket_actions.size > 0 %>
+    15:   <h2>Rocket Actions associados</h2>
+    16:   <table>
+    17:     <tr>
+  app/views/employees/show.html.erb:14:in `_app_views_employees_show_html_erb___853356937937579134_70338159034300'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeeRocketActionAssociations (20140401141021)
+  [1m[35m (67.0ms)[0m  CREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140401141021')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 15:12:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 67ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:12:27 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:12:27 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:12:27 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:12:27 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:12:27 +0100
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 15:12:33 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3971561554823390819_70148930123180 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3971561554823390819_70148930123180 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3971561554823390819_70148930123180 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3971561554823390819_70148930123180 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (80.2ms)
+Completed 200 OK in 100ms (Views: 82.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:12:37 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__445117871084837635_70148933455280 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (41.1ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__445117871084837635_70148933455280'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.5ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:12:37 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__445117871084837635_70148930507720 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__445117871084837635_70148930507720'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.2ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:15:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (4.1ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2240648403521888639_70162393688220 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 140339ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___2240648403521888639_70162393688220'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.0ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:17:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mEmployee Exists (0.5ms)[0m  SELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marco' AND `employees`.`id` != 8) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:18:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___2458880415827835843_70199563634760 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 5414ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___2458880415827835843_70199563634760'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.2ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:19:06 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:21:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (3.8ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:23:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (1.6ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___1138708425137611668_70282340104700 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 138722ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/models/employee_rocket_action_association.rb:1: class/module name must be CONSTANT
+class employee_rocket_action_associations < ActiveRecord::Base
+                                           ^):
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___1138708425137611668_70282340104700'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.8ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:25:31 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___1138708425137611668_70282340104700 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (53.6ms)
+Completed 500 Internal Server Error in 41773ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/models/employee_rocket_action_association.rb:1: class/module name must be CONSTANT
+class employee_rocket_action_associations < ActiveRecord::Base
+                                           ^):
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb___1138708425137611668_70282340104700'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.7ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:26:15 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:27:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__1134241258830456090_70129324348380 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 13783ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/models/employee_rocket_action_association.rb:1: class/module name must be CONSTANT
+class employee_rocket_action_associations < ActiveRecord::Base
+                                           ^):
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__1134241258830456090_70129324348380'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEmployeeRocketActionAssociations (20140401142944)
+  [1m[35m (107.1ms)[0m  CREATE TABLE `employee_rocket_action_associations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `employee_id` int(11), `rocket_action_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140401142944')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:39:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___703696263175044549_70114768254040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (125.6ms)
+Completed 200 OK in 12648ms (Views: 169.6ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:40:05 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:40:06 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:40:06 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:40:06 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:40:06 +0100
+
+
+Started GET "/employees/8/assoc" for 127.0.0.1 at 2014-04-01 15:41:23 +0100
+Processing by EmployeesController#association_form as HTML
+  Parameters: {"employee_id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions`[0m
+  [1m[35m (0.6ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  Rendered employees/association_form.html.erb within layouts/application (98.9ms)
+Completed 200 OK in 122ms (Views: 117.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/employees/8/assoc" for 127.0.0.1 at 2014-04-01 15:41:27 +0100
+Processing by EmployeesController#associate_rocket_action_to_employee as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "associate_rocket_action"=>{"rocket_action_id"=>"8"}, "commit"=>"Guardar", "employee_id"=>"8"}
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 8 LIMIT 1[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36mRocketAction Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8 AND `rocket_actions`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `employee_id`, `rocket_action_id`, `updated_at`) VALUES ('2014-04-01 14:41:27', 8, 8, '2014-04-01 14:41:27')[0m
+  [1m[35m (15.7ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mSELECT SUM(`rocket_actions`.`points`) AS sum_id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `employees` SET `total_points` = 12, `updated_at` = '2014-04-01 14:41:33' WHERE `employees`.`id` = 8[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/employees/8
+Completed 302 Found in 5964ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:41:33 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___703696263175044549_70114768254040 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 2014ms (Views: 17.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:41:35 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:41:35 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:41:35 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:41:35 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:41:35 +0100
+
+
+Started GET "/rocket_actions/new?employee_id=8" for 127.0.0.1 at 2014-04-01 15:42:04 +0100
+Processing by RocketActionsController#new as HTML
+  Parameters: {"employee_id"=>"8"}
+  Rendered rocket_actions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rocket_actions?employee_id=8" for 127.0.0.1 at 2014-04-01 15:42:13 +0100
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "rocket_action"=>{"name"=>"rocket test", "points"=>"5"}, "commit"=>"Guardar", "employee_id"=>"8"}
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 14:42:13', 'rocket test', 5, '2014-04-01 14:42:13')[0m
+  [1m[35m (28.3ms)[0m  COMMIT
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `employee_rocket_action_associations` (`created_at`, `employee_id`, `rocket_action_id`, `updated_at`) VALUES ('2014-04-01 14:42:13', 8, 28, '2014-04-01 14:42:13')[0m
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mSELECT SUM(`rocket_actions`.`points`) AS sum_id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `employees` SET `total_points` = 17, `updated_at` = '2014-04-01 14:42:17' WHERE `employees`.`id` = 8[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/rocket_actions/28
+Completed 302 Found in 4094ms (ActiveRecord: 34.5ms)
+
+
+Started GET "/rocket_actions/28" for 127.0.0.1 at 2014-04-01 15:42:17 +0100
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 28 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 28
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 28[0m
+  Rendered rocket_actions/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:42:18 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:42:18 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:42:18 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:42:18 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:42:18 +0100
+
+
+Started GET "/rocket_actions" for 127.0.0.1 at 2014-04-01 15:42:23 +0100
+Processing by RocketActionsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `rocket_actions`
+  [1m[36mRocketAction Load (0.3ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions`[0m
+  Rendered rocket_actions/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 15:42:26 +0100
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 15:42:27 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3744770536684429577_70114776271760 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3744770536684429577_70114776271760 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3744770536684429577_70114776271760 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb__3744770536684429577_70114776271760 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:42:29 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (1.1ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb___703696263175044549_70114776341420 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 3570ms (Views: 74.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/employees/8/assoc" for 127.0.0.1 at 2014-04-01 15:42:37 +0100
+Processing by EmployeesController#association_form as HTML
+  Parameters: {"employee_id"=>"8"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions`
+  [1m[36m (0.4ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  Rendered employees/association_form.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 27ms (Views: 22.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 15:42:42 +0100
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 15:44:07 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 164ms (Views: 132.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:44:07 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:44:07 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:44:07 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:44:07 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:44:07 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:44:09 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500300 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (73.5ms)
+Completed 200 OK in 26015ms (Views: 75.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/employees/8/edit" for 127.0.0.1 at 2014-04-01 15:44:45 +0100
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  Rendered employees/edit.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 68ms (Views: 40.2ms | ActiveRecord: 3.6ms)
+
+
+Started PUT "/employees/8" for 127.0.0.1 at 2014-04-01 15:44:50 +0100
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "employee"=>{"name"=>"Marcos", "email"=>"marco@test.com", "birth_date"=>"1991-04-03"}, "commit"=>"Alterar", "id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mEmployee Exists (0.7ms)[0m  SELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marcos' AND `employees`.`id` != 8) LIMIT 1
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 56ms
+
+NoMethodError (undefined method `attributes' for #<ActiveRecord::Associations::CollectionProxy::ActiveRecord_Associations_CollectionProxy_RocketAction:0x007fd335358a08>):
+  app/controllers/employees_controller.rb:24:in `update'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.2ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:46:05 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__2021234576053821442_70272552500120'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.3ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 15:46:10 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___1854133752122208543_70272553365500 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:10 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:10 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:10 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:10 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:46:10 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:46:12 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500300 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__2021234576053821442_70272552500300'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.9ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:46:12 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (Could not find the association :employee_rocket_action_associations in model Employee):
+    10:   <%= link_to "Editar", edit_employee_path(@employee.id) %>
+    11:   <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+    12: </p>
+    13: <% if @employee.rocket_actions.size > 0 %>
+    14:   <h2>Rocket Actions associados</h2>
+    15:   <table>
+    16:     <tr>
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__2021234576053821442_70272552500120'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.4ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:46:22 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 76ms (Views: 40.5ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:46:22 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:22 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:22 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:46:22 +0100
+
+
+Started GET "/employees/8/assoc" for 127.0.0.1 at 2014-04-01 15:48:22 +0100
+Processing by EmployeesController#association_form as HTML
+  Parameters: {"employee_id"=>"8"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions`
+  [1m[36m (0.4ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m  [["employee_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8  [["employee_id", 8]]
+  Rendered employees/association_form.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 139ms (Views: 102.3ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/employees/8/assoc" for 127.0.0.1 at 2014-04-01 15:48:24 +0100
+Processing by EmployeesController#associate_rocket_action_to_employee as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "associate_rocket_action"=>{"rocket_action_id"=>"1"}, "commit"=>"Guardar", "employee_id"=>"8"}
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 1 LIMIT 1[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+Completed 500 Internal Server Error in 6ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/employees_controller.rb:44:in `associate_rocket_action_to_employee'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started POST "/employees/8/assoc" for 127.0.0.1 at 2014-04-01 15:48:58 +0100
+Processing by EmployeesController#associate_rocket_action_to_employee as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "associate_rocket_action"=>{"rocket_action_id"=>"1"}, "commit"=>"Guardar", "employee_id"=>"8"}
+  [1m[36mRocketAction Load (0.3ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 1 LIMIT 1[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `rocket_actions` SET `points` = 6, `updated_at` = '2014-04-01 14:48:58' WHERE `rocket_actions`.`id` = 1
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mRocketAction Exists (0.5ms)[0m  SELECT 1 AS one FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8 AND `rocket_actions`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `employee_id`, `rocket_action_id`, `updated_at`) VALUES ('2014-04-01 14:48:58', 8, 1, '2014-04-01 14:48:58')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  SELECT SUM(`rocket_actions`.`points`) AS sum_id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `employees` SET `total_points` = 23, `updated_at` = '2014-04-01 14:49:03' WHERE `employees`.`id` = 8
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/employees/8
+Completed 302 Found in 4876ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:49:03 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (7.7ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 29ms (Views: 17.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:49:03 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:49:03 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:49:03 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:49:03 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:49:03 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:58:20 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 88ms (Views: 48.2ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:58:20 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:20 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:20 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:20 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:20 +0100
+
+
+Started GET "/employees/8/edit" for 127.0.0.1 at 2014-04-01 15:58:23 +0100
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.7ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  Rendered employees/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/employees/8" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "employee"=>{"name"=>"Marcos", "email"=>"marco@test.com", "birth_date"=>"1991-04-03"}, "commit"=>"Alterar", "id"=>"8"}
+  [1m[36mEmployee Load (1.3ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marcos' AND `employees`.`id` != 8) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `employees` SET `name` = 'Marcos', `updated_at` = '2014-04-01 14:58:26' WHERE `employees`.`id` = 8
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mEmployee Exists (1.9ms)[0m  SELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marcos' AND `employees`.`id` != 8) LIMIT 1
+Redirected to http://localhost:3000/employees/8
+Completed 302 Found in 23ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (2.4ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 23ms (Views: 16.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 15:58:26 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:16:21 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500120 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  Rendered employees/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 95ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/models/employee_rocket_action_association.rb:5: syntax error, unexpected ':', expecting '}'
+...validates_uniqueness_of {scope: [:employee_id, :rocket_actio...
+...                               ^
+/Users/rupeal/Desktop/WORK/rails-playground/app/models/employee_rocket_action_association.rb:5: syntax error, unexpected ',', expecting '}'
+...mployee_id, :rocket_action_id], message: ASSOCIATION_HAS_ALR...
+...                               ^):
+  app/views/employees/show.html.erb:13:in `_app_views_employees_show_html_erb__2021234576053821442_70272552500120'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.1ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:21:14 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2021234576053821442_70272552500300 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 77ms (Views: 42.9ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/employees/8/edit" for 127.0.0.1 at 2014-04-01 16:21:18 +0100
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (1.6ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  Rendered employees/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/employees/8" for 127.0.0.1 at 2014-04-01 16:21:22 +0100
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "employee"=>{"name"=>"Marco", "email"=>"marco@test.com", "birth_date"=>"1991-04-03"}, "commit"=>"Alterar", "id"=>"8"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marco' AND `employees`.`id` != 8) LIMIT 1[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 17ms
+
+NoMethodError (undefined method `attributes' for #<ActiveRecord::Associations::CollectionProxy::ActiveRecord_Associations_CollectionProxy_RocketAction:0x007fd335461d50>):
+  app/controllers/employees_controller.rb:24:in `update'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (87.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-01 16:45:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 125ms (Views: 107.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:45:09 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:09 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:09 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:09 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:09 +0100
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 16:45:10 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292793360800 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292793360800 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292793360800 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292793360800 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 96ms (Views: 76.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 16:45:11 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292803789140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m
+  Rendered employees/show.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 71ms (Views: 60.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/employees/13/assoc" for 127.0.0.1 at 2014-04-01 16:45:26 +0100
+Processing by EmployeesController#association_form as HTML
+  Parameters: {"employee_id"=>"13"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions`[0m
+  [1m[35m (0.5ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m  [["employee_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13  [["employee_id", 13]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m  [["employee_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13  [["employee_id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m  [["employee_id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13  [["employee_id", 13]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT `rocket_actions`.id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m  [["employee_id", 13]]
+  Rendered employees/association_form.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/employees/13/assoc" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+Processing by EmployeesController#associate_rocket_action_to_employee as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "associate_rocket_action"=>{"rocket_action_id"=>"3"}, "commit"=>"Guardar", "employee_id"=>"13"}
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+  [1m[35mRocketAction Exists (0.5ms)[0m  SELECT 1 AS one FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13 AND `rocket_actions`.`id` = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `employee_id`, `rocket_action_id`, `updated_at`) VALUES ('2014-04-01 15:45:30', 13, 3, '2014-04-01 15:45:30')
+  [1m[36m (37.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT SUM(`rocket_actions`.`points`) AS sum_id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `employees` SET `total_points` = 6, `updated_at` = '2014-04-01 15:45:30' WHERE `employees`.`id` = 13
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/employees/13
+Completed 302 Found in 92ms (ActiveRecord: 43.1ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mEmployee Load (0.7ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292792790820 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m
+  [1m[35mRocketAction Load (0.7ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13
+  Rendered employees/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:45:30 +0100
+
+
+Started GET "/rocket_actions/new?employee_id=13" for 127.0.0.1 at 2014-04-01 16:45:37 +0100
+Processing by RocketActionsController#new as HTML
+  Parameters: {"employee_id"=>"13"}
+  Rendered rocket_actions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rocket_actions?employee_id=13" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+Processing by RocketActionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "rocket_action"=>{"name"=>"rocket maria", "points"=>"3"}, "commit"=>"Guardar", "employee_id"=>"13"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `rocket_actions` (`created_at`, `name`, `points`, `updated_at`) VALUES ('2014-04-01 15:45:51', 'rocket maria', 3, '2014-04-01 15:45:51')
+  [1m[36m (14.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `employee_rocket_action_associations` (`created_at`, `employee_id`, `rocket_action_id`, `updated_at`) VALUES ('2014-04-01 15:45:51', 13, 29, '2014-04-01 15:45:51')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT SUM(`rocket_actions`.`points`) AS sum_id FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `employees` SET `total_points` = 9, `updated_at` = '2014-04-01 15:45:51' WHERE `employees`.`id` = 13
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/rocket_actions/29
+Completed 302 Found in 48ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/rocket_actions/29" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 29 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 29[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 29
+  Rendered rocket_actions/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:45:51 +0100
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 16:45:59 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292803789140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13
+  [1m[36mRocketAction Load (0.6ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m
+  Rendered employees/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rocket_actions/29" for 127.0.0.1 at 2014-04-01 16:46:08 +0100
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 29 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 29[0m
+  [1m[35mEmployee Load (0.7ms)[0m  SELECT `employees`.* FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 29
+  Rendered rocket_actions/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/employees/13" for 127.0.0.1 at 2014-04-01 16:46:14 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 13 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292803789140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (3.0ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 13[0m
+  Rendered employees/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 16:46:22 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:46:22 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:22 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:22 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:22 +0100
+
+
+Started GET "/employees/15" for 127.0.0.1 at 2014-04-01 16:46:25 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 15 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292803789140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 15[0m
+  Rendered employees/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/employees/15" for 127.0.0.1 at 2014-04-01 16:46:28 +0100
+Processing by EmployeesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "id"=>"15"}
+  [1m[35mEmployee Load (0.7ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 15 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `employees` WHERE `employees`.`id` = 15
+  [1m[36m (33.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/employees
+Completed 302 Found in 42ms (ActiveRecord: 34.5ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2014-04-01 16:46:28 +0100
+Processing by EmployeesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `employees`
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT `employees`.* FROM `employees`[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_employees_index_html_erb___3026035130126679389_70292819642140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/index.html.erb:19)
+  Rendered employees/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:46:28 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:29 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:29 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:29 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:29 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:46:31 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292803789140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/employees/8/edit" for 127.0.0.1 at 2014-04-01 16:46:36 +0100
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+  Rendered employees/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/employees/8" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjZsfEJQiLYRVHjUSRILB8lMSpHbLvEtYpWeB/2J7UI=", "employee"=>{"name"=>"Marco", "email"=>"marco@test.com", "birth_date"=>"1991-04-03"}, "commit"=>"Alterar", "id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mEmployee Exists (0.5ms)[0m  SELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marco' AND `employees`.`id` != 8) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `employees` SET `name` = 'Marco', `updated_at` = '2014-04-01 15:46:40' WHERE `employees`.`id` = 8[0m
+  [1m[35m (9.9ms)[0m  COMMIT
+  [1m[36mEmployee Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM `employees` WHERE (`employees`.`name` = BINARY 'Marco' AND `employees`.`id` != 8) LIMIT 1[0m
+Redirected to http://localhost:3000/employees/8
+Completed 302 Found in 29ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.5ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292792790820 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.4ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:46:40 +0100
+
+
+Started GET "/rocket_actions/28" for 127.0.0.1 at 2014-04-01 16:46:44 +0100
+Processing by RocketActionsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` WHERE `rocket_actions`.`id` = 28 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 28
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT `employees`.* FROM `employees` INNER JOIN `employee_rocket_action_associations` ON `employees`.`id` = `employee_rocket_action_associations`.`employee_id` WHERE `employee_rocket_action_associations`.`rocket_action_id` = 28[0m
+  Rendered rocket_actions/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:46:46 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292803789140 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (0.5ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:48:11 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292819565580 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.5ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:48:12 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:48:12 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:48:12 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:48:12 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:48:12 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:48:54 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (0.9ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+  Rendered employees/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 8ms
+
+SyntaxError (/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:34: unknown regexp option - p
+unmatched close parenthesis: /strong>, employees_path);@output_buffer.safe_append=' </
+/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:35: unterminated string meets end of file
+/Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:35: syntax error, unexpected end-of-input, expecting ')'):
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.4) lib/action_view/template.rb:248:in `block in compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `synchronize'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.4) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.4) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:403:in `_run__290948539829196531__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1491596239637786256__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  railties (4.0.4) lib/rails/rack/debugger.rb:20:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /Users/rupeal/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.5ms)
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:49:26 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292804906980 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  [1m[36mRocketAction Load (0.4ms)[0m  [1mSELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  Rendered employees/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:49:26 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:26 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:26 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:26 +0100
+
+
+Started GET "/employees/8" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEmployee Load (1.0ms)[0m  SELECT `employees`.* FROM `employees` WHERE `employees`.`id` = 8 LIMIT 1
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from _app_views_employees_show_html_erb__2975559420177233950_70292793636720 at /Users/rupeal/Desktop/WORK/rails-playground/app/views/employees/show.html.erb:11)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8[0m
+  [1m[35mRocketAction Load (1.1ms)[0m  SELECT `rocket_actions`.* FROM `rocket_actions` INNER JOIN `employee_rocket_action_associations` ON `rocket_actions`.`id` = `employee_rocket_action_associations`.`rocket_action_id` WHERE `employee_rocket_action_associations`.`employee_id` = 8
+  Rendered employees/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 25ms (Views: 17.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-01 16:49:50 +0100
