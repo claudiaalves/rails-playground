@@ -2,7 +2,7 @@
 <%= form_for :associate_rocket_action, url:  associate_rocket_action_to_employee_path(@employee.id), method: :post do |f| %>
   <p>
     <%= f.label :rocket_action, "Seleccione o Rocket Action que pertende associar ao empregado:" %><br>
-    <%= f.collection_select(:rocket_action_id, RocketAction.where("id NOT IN (?)", @employee.rocket_action_ids), :id, :name) %>
+    <%= f.collection_select(:rocket_action_id, RocketAction.select{ |r|  @employee.rocket_action_ids.exclude? r.id}, :id, :name) %>
   </p>
 
     <%= f.submit 'Guardar'%>

@@ -8,6 +8,11 @@ class Employee < ActiveRecord::Base
   has_and_belongs_to_many  :rocket_actions
   validates :rocket_actions,uniqueness: {scope: [:employee_id, :rocket_action_id]}
 
+  def update_total_points
+    debugger
+    self.update_attribute(:total_points, self.rocket_actions.sum('points'))  
+  end
+
   private
   def greater_or_equal_than_18_years_old
   	if self.birth_date != nil

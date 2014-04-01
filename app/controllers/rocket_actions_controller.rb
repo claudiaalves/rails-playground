@@ -4,9 +4,9 @@ class RocketActionsController < ApplicationController
   end
 
   def new
-    @employee_id = params[:employee_id]  
+    @employee_id = params[:employee_id] 
   end
-  
+ 
   def show
     @rocket_action = RocketAction.find(params[:id])
   end
@@ -17,11 +17,12 @@ class RocketActionsController < ApplicationController
       if (employee_id = params[:employee_id])!=nil
         employee = Employee.find(employee_id)
         rocket_action.employees << employee
+        employee.update_total_points
         redirect_to rocket_action_path(rocket_action.id) 
       end
     end
   end
-
+=begin
   def edit
     @rocket_action = RocketAction.find(params[:id])
   end
@@ -40,7 +41,7 @@ class RocketActionsController < ApplicationController
       redirect_to action: "index"
     end
   end
-
+=end
   private
     def rocket_action_params
       params.require(:rocket_action).permit(:name, :points)

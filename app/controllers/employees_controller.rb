@@ -42,6 +42,7 @@ class EmployeesController < ApplicationController
     rocket_action = RocketAction.find(associate_rocket_action_params[:rocket_action_id])
     employee = Employee.find(params[:employee_id])
     employee.rocket_actions << rocket_action unless employee.rocket_actions.include? rocket_action
+    employee.update_total_points
     redirect_to employee_path(params[:employee_id])
   end
 
