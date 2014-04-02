@@ -1,0 +1,19 @@
+<%= form_for employee, url: url, method: http_method do |form| %>
+  <p>
+    <%= form.label :name, "Nome" %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :email, "Email" %><br>
+    <%= form.text_field :email %>
+  </p>
+  
+  <p>
+    <%= form.label :birth_date, "Data de Nascimento" %><br>
+    <%= form.date_field :birth_date %>
+  </p>
+
+  <p>
+    <%= form.submit submit_text%>
+  </p>
+<% end %>
