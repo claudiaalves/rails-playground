@@ -1,0 +1,17 @@
+<h1>Novo Rocket Action</h1>
+<% @url = @employee_id.nil? ? rocket_actions_path : rocket_actions_path(params: {employee_id: @employee_id}) %>
+<%= form_for :rocket_action, url: @url, method: :post do |f| %>
+  <p>
+    <%= f.label :name, "NOME" %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :points, "PONTOS" %><br>
+    <%= f.text_field :points, value: 0 %>
+  </p>
+  <p>
+    <%= f.submit 'Guardar'%>
+  </p>
+<% end %>
+
+<%=link_to "Ver Rocket Actions", rocket_actions_path%>

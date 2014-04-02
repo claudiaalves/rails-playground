@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do |x|
+  x += 1
+	RocketAction.create(name: 'rocket'+x.to_s, points: x)
+end

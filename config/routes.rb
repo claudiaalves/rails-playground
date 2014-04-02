@@ -1,8 +1,14 @@
 TestApp::Application.routes.draw do
   resources :employees
+  
+  get "/rocket_actions", to: "rocket_actions#index", as: "rocket_actions"
+  get "/rocket_actions/new", to:"rocket_actions#new", as: "new_rocket_action"
+  get "/rocket_actions/:id", to: "rocket_actions#show", as: "rocket_action"
+  post "/rocket_actions", to: "rocket_actions#create"
+  get "/employees/:employee_id/assoc", to:"employees#association_form", as: "associate_rocket_action_to_employee"
+  post "/employees/:employee_id/assoc", to:"employees#associate_rocket_action_to_employee"
 
-
-  root "employees#index"
+  root "application#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

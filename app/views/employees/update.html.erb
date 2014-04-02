@@ -1,15 +1,14 @@
-<% if @employee.errors.any? %>
+<% if @employee.valid? %>
+	<h2>Actualização efectuada com sucesso</h2>
+<%else%>
   <div id="error_explanation">
-    <h2>Não é possível os seguintes dados:</h2>
+    <h2>Não é possível alterar os seguintes dados:</h2>
     <ul>
     <% @employee.errors.each do |attribute, msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
-<%else%>
-  <h2>Actualização efectuada com sucesso</h2>
 <% end %>
 
-
- <%=link_to "Ver Empregado", employee_path(@employee.id)%>
+ <%=link_to "Voltar", employee_path(@employee.id)%>

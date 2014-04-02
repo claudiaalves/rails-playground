@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325115141) do
+ActiveRecord::Schema.define(version: 20140401142944) do
+
+  create_table "employee_rocket_action_associations", force: true do |t|
+    t.integer  "employee_id"
+    t.integer  "rocket_action_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "employees", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.date     "birth_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "total_points", default: 0
+  end
+
+  create_table "rocket_actions", force: true do |t|
+    t.string   "name"
+    t.integer  "points",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

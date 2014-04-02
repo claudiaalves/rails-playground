@@ -1,0 +1,29 @@
+<h1>Rocket Action </h1>
+<ul>
+	<li> <strong> ID: </strong> <%= @rocket_action.id %> </li>
+	<li> <strong> NOME: </strong> <%= @rocket_action.name %> </li>
+	<li> <strong> PONTOS: </strong> <%= @rocket_action.points %> </li>
+</ul>
+<% if @rocket_action.employees.size > 0 %>
+  <h2>Empregados associados</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>NOME</th>
+      <th>EMAIL</th>
+      <th>DATA DE NASCIMENTO</th>
+    </tr>
+    <% @rocket_action.employees.each do|employee| %>
+    <tr>
+      <td><%= employee.id %></td>
+      <td><%= link_to employee.name, employee_path(employee.id) %></td>
+	    <td><%= employee.email %></td>
+	    <td><%= employee.birth_date %></td>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
+  <h3>Não existem empregados associados!</h3>
+<% end %>
+
+ <%=link_to "Ver Rocket Actions", rocket_actions_path%>

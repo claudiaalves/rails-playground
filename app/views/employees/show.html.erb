@@ -1,12 +1,34 @@
 <h1>Empregado </h1>
 <ul>
 	<li> <strong> ID: </strong> <%= @employee.id %> </li>
-	<li> <strong> Nome: </strong> <%= @employee.name %> </li>
-	<li> <strong> Email: </strong> <%= @employee.email %> </li>
-	<li> <strong> Data de Nascimento: </strong> <%= @employee.birth_date %> </li>
+	<li> <strong> NOME: </strong> <%= @employee.name %> </li>
+	<li> <strong> EMAIL: </strong> <%= @employee.email %> </li>
+	<li> <strong> DATA DE NASCIMENTO: </strong> <%= @employee.birth_date %> </li>
+  <li> <strong> PONTOS (TOTAL): </strong> <%= @employee.total_points %> </li>
 </ul>
-
-<p><%= button_to "Editar", edit_employee_path(@employee.id), method: :get %>
- <%= button_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%></p>
-
- <%=link_to "Home", employees_path%>
+<p>
+  <%= link_to "Editar", edit_employee_path(@employee.id) %>
+  <%= link_to "Eliminar", employee_path(@employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+</p>
+<% if @employee.rocket_actions.size > 0 %>
+  <h2>Rocket Actions associados</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>NOME</th>
+      <th>PONTOS</th>
+    </tr>
+    <% @employee.rocket_actions.each do|rocket_action| %>
+    <tr>
+      <td><%= rocket_action.id %></td>
+      <td><%= link_to rocket_action.name, rocket_action_path(rocket_action.id) %></td>
+      <td><%= rocket_action.points %></td>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
+  <h3>Não existem rocket actions associados!</h3>
+<% end %>
+<p><%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employee_id: @employee.id})%>
+<%= link_to "Associar um Rocket Action", associate_rocket_action_to_employee_path(@employee.id)%> </p>
+<p><strong><%= link_to "Ver Empregados", employees_path%> </p></strong>

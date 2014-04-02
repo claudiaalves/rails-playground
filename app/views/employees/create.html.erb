@@ -1,5 +1,7 @@
-
-<% if @employee.errors.any? %>
+<% if @employee.valid? %>
+  <p>Criado com sucesso!</p>
+  <%=link_to "Ver Empregado", employee_path(@employee.id) %>
+<%else%>
   <div id="error_explanation">
     <h2>Não é possível criar o empregado :</h2>
     <ul>
@@ -8,8 +10,5 @@
     <% end %>
     </ul>
   </div>
-<%else%>
-  <p>Criado com sucesso!</p>
+  <%=link_to "Ver Empregados", employees_path%>
 <% end %>
-
-<%=link_to "Home", employees_path%>

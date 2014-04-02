@@ -4,4 +4,5 @@ module ErrorString
   INVALID_EMAIL = "Email é inválido!"
   BIRTH_DATE_REQUIRED = "A data de nascimento é um campo obrigatório!"
   MINIMUM_AGE_18 = "Idade minima: 18 anos!"
+  POINTS_REQUIRED_INTEGER_NUMBER = "Insira um número inteiro positivo no campo Pontos!"
 end
