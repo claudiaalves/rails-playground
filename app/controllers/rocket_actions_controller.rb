@@ -12,14 +12,14 @@ class RocketActionsController < ApplicationController
   end
 
   def create
-    rocket_action = RocketAction.new(rocket_action_params)
-    if rocket_action.save
+    @rocket_action = RocketAction.new(rocket_action_params)
+    if @rocket_action.save
       employee_id = params[:employee_id]
       if employee_id.present?
         employee = Employee.find(employee_id)
-        rocket_action.employees << employee
+        @rocket_action.employees << employee
         employee.update_total_points
-        redirect_to rocket_action_path(rocket_action.id) 
+        redirect_to rocket_action_path(@rocket_action.id) 
       end
     end
   end

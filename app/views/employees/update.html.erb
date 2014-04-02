@@ -1,4 +1,6 @@
 <% if @employee.valid? %>
+	<h2>Actualização efectuada com sucesso</h2>
+<%else%>
   <div id="error_explanation">
     <h2>Não é possível alterar os seguintes dados:</h2>
     <ul>
@@ -7,9 +9,6 @@
     <% end %>
     </ul>
   </div>
-<%else%>
-  <h2>Actualização efectuada com sucesso</h2>
 <% end %>
-
 
  <%=link_to "Voltar", employee_path(@employee.id)%>

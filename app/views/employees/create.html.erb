@@ -1,4 +1,7 @@
 <% if @employee.valid? %>
+  <p>Criado com sucesso!</p>
+  <%=link_to "Ver Empregado", employee_path(@employee.id) %>
+<%else%>
   <div id="error_explanation">
     <h2>Não é possível criar o empregado :</h2>
     <ul>
@@ -8,7 +11,4 @@
     </ul>
   </div>
   <%=link_to "Ver Empregados", employees_path%>
-<%else%>
-  <p>Criado com sucesso!</p>
-  <%=link_to "Ver Empregado", employee_path(@employee.id) %>
 <% end %>

@@ -9,7 +9,7 @@ class Employee < ActiveRecord::Base
   has_many  :rocket_actions, :through => :employee_rocket_action_associations
 
   def update_total_points
-    self.update_attributes(:total_points, self.rocket_actions.sum('points'))  
+    self.update_attributes(:total_points => self.rocket_actions.sum('points'))  
   end
 
   private
