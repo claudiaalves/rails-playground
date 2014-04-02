@@ -1,5 +1,5 @@
 <h1>Novo Rocket Action</h1>
-<% @url = @employee_id == nil ? rocket_actions_path : rocket_actions_path(params: {employee_id: @employee_id}) %>
+<% @url = @employee_id.nil? ? rocket_actions_path : rocket_actions_path(params: {employee_id: @employee_id}) %>
 <%= form_for :rocket_action, url: @url, method: :post do |f| %>
   <p>
     <%= f.label :name, "NOME" %><br>

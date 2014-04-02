@@ -14,7 +14,8 @@ class RocketActionsController < ApplicationController
   def create
     rocket_action = RocketAction.new(rocket_action_params)
     if rocket_action.save
-      if (employee_id = params[:employee_id])!=nil
+      employee_id = params[:employee_id]
+      if employee_id.present?
         employee = Employee.find(employee_id)
         rocket_action.employees << employee
         employee.update_total_points
