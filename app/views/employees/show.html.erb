@@ -1,5 +1,11 @@
-<%= @presenter.display_employee_list %>
-<%= @presenter.display_rocket_actions_associated %>
-<%= @presenter.generate_new_rocket_link %>
-<%= @presenter.generate_associate_rocket_link %>
-<%= @presenter.generate_index_employees_link %>
+<div id="employee_details">
+	<%= @presenter.display_employee_list %>
+</div>
+<div id="rocket_actions_associated">
+	<%= @presenter.display_rocket_actions_associated %>
+</div>
+<div id="container_links">
+	<%= @presenter.generate_new_rocket_link %>
+	<%= @presenter.generate_associate_rocket_link %>
+  <%= @presenter.generate_index_employees_link %>
+</div>
