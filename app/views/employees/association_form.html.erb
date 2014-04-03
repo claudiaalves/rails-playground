@@ -1,3 +1,6 @@
+<% unless @error.nil? %>
+  <h3><%= @error%></h3>
+<%end%>
 <h1>Associar Rocket Action </h1>
 <%= form_for :associate_rocket_action, url:  associate_rocket_action_to_employee_path(@employee.id), method: :post do |f| %>
   <p>

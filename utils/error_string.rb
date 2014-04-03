@@ -5,4 +5,5 @@ module ErrorString
   BIRTH_DATE_REQUIRED = "A data de nascimento é um campo obrigatório!"
   MINIMUM_AGE_18 = "Idade minima: 18 anos!"
   POINTS_REQUIRED_INTEGER_NUMBER = "Insira um número inteiro positivo no campo Pontos!"
+  ASSOCIATE_ROCKET_TO_EMPLOYEE_FAIL = "Não foi possivel associar o rocket ao empregado!"
 end

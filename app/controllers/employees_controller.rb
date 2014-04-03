@@ -40,11 +40,15 @@ class EmployeesController < ApplicationController
   end
 
   def associate_rocket_action_to_employee
+    @employee = Employee.find(params[:employee_id])
     rocket_action = RocketAction.find(associate_rocket_action_params[:rocket_action_id])
-    employee = Employee.find(params[:employee_id])
-    employee.rocket_actions << rocket_action unless employee.rocket_actions.include? rocket_action
-    employee.update_total_points
-    redirect_to employee_path(params[:employee_id])
+    has_success = AssociateRocketToEmployee.run(@employee, rocket_action)
+    if has_success[:success]
+      redirect_to employee_path(@employee.id)
+    else
+      @error = has_success[:message]
+      render "association_form"
+    end
   end
 
   private
