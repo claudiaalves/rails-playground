@@ -41,8 +41,7 @@ class EmployeesController < ApplicationController
 
   def associate_rocket_action_to_employee
     @employee = Employee.find(params[:employee_id])
-    rocket_action = RocketAction.find(associate_rocket_action_params[:rocket_action_id])
-    has_success = AssociateRocketToEmployee.run(@employee, rocket_action)
+    has_success = AssociateRocketToEmployee.run(@employee, RocketAction.find(associate_rocket_action_params[:rocket_action_id]))
     if has_success[:success]
       redirect_to employee_path(@employee.id)
     else

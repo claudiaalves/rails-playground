@@ -116,9 +116,9 @@ class EmployeeTest < ActiveSupport::TestCase
       })
     assert false unless rocket_action.save
     
-    assocIteractor = AssociateRocketToEmployee.new(employee.id, rocket_action.id)
-    assocIteractor.associate 
-    assert assocIteractor.associated_with_success?
+    iteractor = AssociateRocketToEmployee.new(employee, rocket_action)
+    assert iteractor.may_run?
+    assert iteractor.run()[:success]
     assert Employee.find(employee.id).total_points == 3
   end
 end
