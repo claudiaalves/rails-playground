@@ -4,7 +4,8 @@ class EmployeesController < ApplicationController
   end
 
   def show
-  	@employee = Employee.find(params[:id])
+  	employee = Employee.find(params[:id])
+    @presenter = EmployeePresenter.new(self, view_context, employee)
   end
 
   def create

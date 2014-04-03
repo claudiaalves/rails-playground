@@ -1,3 +1,9 @@
+<%= @presenter.display_employee_list %>
+<%= @presenter.display_rocket_actions_associated %>
+<%= @presenter.generate_new_rocket_link %>
+<%= @presenter.generate_associate_rocket_link %>
+<%= @presenter.generate_index_employees_link %>
+<% if false %>
 <h1>Empregado </h1>
 <ul>
 	<li> <strong> ID: </strong> <%= @employee.id %> </li>
@@ -32,3 +38,4 @@
 <p><%= link_to "Criar Rocket Action", new_rocket_action_path(params: {employee_id: @employee.id})%>
 <%= link_to "Associar um Rocket Action", associate_rocket_action_to_employee_path(@employee.id)%> </p>
 <p><strong><%= link_to "Ver Empregados", employees_path%> </p></strong>
+<% end %>

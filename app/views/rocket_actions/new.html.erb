@@ -15,3 +15,6 @@
 <% end %>
 
 <%=link_to "Ver Rocket Actions", rocket_actions_path%>
+<% unless @employee_id.nil? %>
+  <%=link_to "Voltar", employee_path(@employee_id)%>
+<%end%>

@@ -1,0 +1,15 @@
+<h2><%= heading %></h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NOME</th>
+    <th>PONTOS</th>
+  </tr>
+  <% rocket_actions.each do|rocket_action| %>
+  <tr>
+    <td><%= rocket_action.id %></td>
+    <td><%= link_to rocket_action.name, rocket_action_path(rocket_action.id) %></td>
+    <td><%= rocket_action.points %></td>
+  </tr>
+  <% end %>
+</table>
