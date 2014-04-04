@@ -1,4 +1,4 @@
-class EmployeePresenters
+class EmployeePresenter
   def initialize(controller, view, employee)
     @controller = controller
     @view = view

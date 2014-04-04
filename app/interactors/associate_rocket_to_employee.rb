@@ -14,7 +14,7 @@ class AssociateRocketToEmployee
     @employee.transaction do
       return message(false, ASSOCIATION_BETWEEN_ROCKET_AND_EMPLOYEE_ALREADY_EXIST) unless may_run? 
       @employee.rocket_actions << @rocket_action
-      @employee.update_total_points
+      UpdateTotalPointsEmployee.run(@employee)
       @employee.valid? ? (return message(true)): (raise ActiveRecord::Rollback)
     end
     message(false, ASSOCIATE_ROCKET_TO_EMPLOYEE_FAIL)

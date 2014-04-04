@@ -15,7 +15,7 @@ class EmployeeControllerTest < ActionController::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago
       })
-    assert false unless employee.save
+    employee.save!
     get :show, id: employee.id
     assert_response :success
   end
@@ -35,7 +35,7 @@ class EmployeeControllerTest < ActionController::TestCase
       name: "Claudia",
       birth_date: 18.years.ago
       })
-    assert false unless employee.save
+    employee.save!
     get :edit, id: employee.id
     assert_response :success
   end
@@ -45,7 +45,7 @@ class EmployeeControllerTest < ActionController::TestCase
       name: "Claudia",
       birth_date: 18.years.ago
     })
-    assert false unless employee.save
+    employee.save!
     post :update, id: employee.id,  employee:{ name:"Cláudia", email: "claudia@test.pt", birth_date: 18.years.ago - 1.days}
     assert_response :redirect
   end
@@ -56,7 +56,7 @@ class EmployeeControllerTest < ActionController::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago
       })
-    assert false unless employee.save
+    employee.save!
     get :destroy, id: employee.id
     assert_response :redirect
   end

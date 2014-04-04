@@ -9,7 +9,7 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: "1991-03-03"
     })
-    employee.save
+    employee.save!
     assert employee.errors[:name][0] == NAME_REQUIRED
   end
 
@@ -19,13 +19,13 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: "1991-03-03"
     })
-    assert employee1.save
+    employee1.save!
     employee2 = Employee.new({
       name:"Claudia",
       email: "alves@test.com",
       birth_date: "1988-03-03"
     })
-    employee2.save
+    employee2.save!
     assert employee2.errors[:name][0] == NAME_HAS_ALREADY_BEEN_TAKEN 
   end
 
@@ -35,7 +35,7 @@ class EmployeeTest < ActiveSupport::TestCase
       name: "Claudia",
       email: "claudia@test.com"
     })
-    employee.save
+    employee.save!
     assert employee.errors[:birth_date][0] == BIRTH_DATE_REQUIRED
   end
  
@@ -46,7 +46,7 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago + 1.days
     })
-    employee.save
+    employee.save!
   assert employee.errors[:birth_date][0] == MINIMUM_AGE_18
   end
 
@@ -56,7 +56,7 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago
     })
-    employee.save
+    employee.save!
     assert employee.errors[:birth_date].count == 0
 
   end
@@ -67,7 +67,7 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago - 1.days
     })
-    employee.save
+    employee.save!
     assert employee.errors[:birth_date].count == 0
 
   end
@@ -78,7 +78,7 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test",
       birth_date: 18.years.ago
     })
-    employee.save
+    employee.save!
     assert employee.errors[:email][0] == INVALID_EMAIL
   end
 
@@ -88,7 +88,7 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago - 1.days
     })
-    employee.save
+    employee.save!
     assert employee.errors[:email].count == 0
   end
 
@@ -97,7 +97,7 @@ class EmployeeTest < ActiveSupport::TestCase
       name: "Claudia",
       birth_date: 18.years.ago - 1.days
     })
-    employee.save
+    employee.save!
     assert employee.errors[:email].count == 0
   end  
 
@@ -108,17 +108,15 @@ class EmployeeTest < ActiveSupport::TestCase
       email: "claudia@test.com",
       birth_date: 18.years.ago
       })
-    assert false unless employee.save
+    employee.save!
 
     rocket_action = RocketAction.new({
       name: "rocket test",
       points: 3
       })
-    assert false unless rocket_action.save
+    rocket_action.save!
     
-    iteractor = AssociateRocketToEmployee.new(employee, rocket_action)
-    assert iteractor.may_run?
-    assert iteractor.run()[:success]
-    assert Employee.find(employee.id).total_points == 3
+    assert = AssociateRocketToEmployee.run(employee, rocket_action)
+    assert employee.total_points == 3
   end
 end
