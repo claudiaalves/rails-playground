@@ -14,8 +14,8 @@ class Employee < ActiveRecord::Base
 
   private
   def greater_or_equal_than_18_years_old
-  	if self.birth_date != nil
-  	  errors.add(:birth_date, MINIMUM_AGE_18) if self.birth_date > 18.years.ago
+    if self.birth_date != nil
+      errors.add(:birth_date, MINIMUM_AGE_18) if self.birth_date > 18.years.ago
     end
   end
 end

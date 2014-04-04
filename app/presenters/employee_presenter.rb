@@ -1,6 +1,5 @@
-class EmployeePresenter
-
- def initialize(controller, view, employee)
+class EmployeePresenters
+  def initialize(controller, view, employee)
     @controller = controller
     @view = view
     @employee = employee
@@ -11,7 +10,7 @@ class EmployeePresenter
   end
 
   def display_rocket_actions_associated
-  	if @employee.rocket_actions.size > 0 
+    if @employee.rocket_actions.size > 0 
       @view.render partial: "rockets_table", locals: {rocket_actions: @employee.rocket_actions, heading: "Rocket Actions associados"} 
     else 
       @view.content_tag :h3, "Não existem rocket actions associados!"

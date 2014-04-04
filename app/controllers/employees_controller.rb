@@ -1,15 +1,15 @@
 class EmployeesController < ApplicationController
   def index
-  	@employees = Employee.all
+    @employees = Employee.all
   end
 
   def show
-  	employee = Employee.find(params[:id])
+    employee = Employee.find(params[:id])
     @presenter = EmployeePresenter.new(self, view_context, employee)
   end
 
   def create
-  	@employee = Employee.new(employee_params)
+    @employee = Employee.new(employee_params)
     if @employee.save
       redirect_to employee_path(@employee.id) 
     end
@@ -17,11 +17,11 @@ class EmployeesController < ApplicationController
 
 
   def edit
-  	@employee = Employee.find(params[:id])
+    @employee = Employee.find(params[:id])
   end
 
   def update
-  	@employee = Employee.find(params[:id])
+    @employee = Employee.find(params[:id])
     @employee.update_attributes(employee_params)
     if @employee.valid?
       redirect_to employee_path(@employee.id) 
@@ -29,10 +29,10 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
-  	@employee = Employee.find(params[:id])
-  	if @employee.destroy
-  		redirect_to action: "index"
-  	end
+    @employee = Employee.find(params[:id])
+    if @employee.destroy
+      redirect_to action: "index"
+    end
   end
 
   def association_form
@@ -52,7 +52,7 @@ class EmployeesController < ApplicationController
 
   private
     def employee_params
-    	params.require(:employee).permit(:name, :email, :birth_date)
+      params.require(:employee).permit(:name, :email, :birth_date)
     end
 
     def associate_rocket_action_params

@@ -1,8 +1,8 @@
 <h1>Rocket Action </h1>
 <ul>
-	<li> <strong> ID: </strong> <%= @rocket_action.id %> </li>
-	<li> <strong> NOME: </strong> <%= @rocket_action.name %> </li>
-	<li> <strong> PONTOS: </strong> <%= @rocket_action.points %> </li>
+  <li> <strong> ID: </strong> <%= @rocket_action.id %> </li>
+  <li> <strong> NOME: </strong> <%= @rocket_action.name %> </li>
+  <li> <strong> PONTOS: </strong> <%= @rocket_action.points %> </li>
 </ul>
 <% if @rocket_action.employees.size > 0 %>
   <h2>Empregados associados</h2>
@@ -17,8 +17,8 @@
     <tr>
       <td><%= employee.id %></td>
       <td><%= link_to employee.name, employee_path(employee.id) %></td>
-	    <td><%= employee.email %></td>
-	    <td><%= employee.birth_date %></td>
+      <td><%= employee.email %></td>
+      <td><%= employee.birth_date %></td>
     </tr>
     <% end %>
   </table>
