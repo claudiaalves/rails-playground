@@ -1,22 +1,3 @@
 <h1>Novo Empregado</h1>
-<%= form_for :employee, url: employees_path, method: :post do |f| %>
-  <p>
-    <%= f.label :name, "NOME" %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email, "email" %><br>
-    <%= f.text_field :email %>
-  </p>
-  
-  <p>
-    <%= f.label :birth_date, "DATA DE NASCIMENTO" %><br>
-    <%= f.date_field :birth_date %>
-  </p>
-
-  <p>
-    <%= f.submit 'Guardar'%>
-  </p>
-<% end %>
-
+<%= render partial: "form", locals: {employee: :employee, url: employees_path, http_method: :post, submit_text: "Guardar"} %>
 <%=link_to "Ver Empregados", employees_path%>

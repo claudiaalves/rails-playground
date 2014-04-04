@@ -1,0 +1,12 @@
+<h1><%= heading%> </h1>
+<ul>
+  <li> <strong> ID: </strong> <%= employee.id %> </li>
+  <li> <strong> NOME: </strong> <%= employee.name %> </li>
+  <li> <strong> EMAIL: </strong> <%= employee.email %> </li>
+  <li> <strong> DATA DE NASCIMENTO: </strong> <%= employee.birth_date %> </li>
+  <li> <strong> PONTOS (TOTAL): </strong> <%= employee.total_points %> </li>
+</ul>
+<p>
+  <%= link_to "Editar", edit_employee_path(employee.id) %>
+  <%= link_to "Eliminar", employee_path(employee.id), method: :delete , confirm: "Pretende eliminar?"%>
+</p>
